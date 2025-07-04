@@ -152,7 +152,7 @@ export default function Community() {
         <link rel="canonical" href="https://myrk-game.com/community" />
       </Head>
 
-      <div className="min-h-screen bg-[#0a0a0a] text-white">
+      <div className="min-h-screen bg-[#0a0a0a] text-white optimized-background animate-fade-in">
         <HeaderSection scrollToPreRegister={scrollToPreRegister} />
 
         {/* Hero Section */}

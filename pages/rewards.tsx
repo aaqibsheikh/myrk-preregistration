@@ -147,7 +147,7 @@ export default function Rewards() {
         <link rel="canonical" href="https://myrk-game.com/rewards" />
       </Head>
 
-      <div className="min-h-screen bg-[#0a0a0a] text-white">
+      <div className="min-h-screen bg-[#0a0a0a] text-white optimized-background animate-fade-in">
         <HeaderSection scrollToPreRegister={scrollToPreRegister} />
 
         {/* Hero Section */}
