@@ -223,9 +223,6 @@ export const HeroSection = ({ scrollToPreRegister }: HeroSectionProps): JSX.Elem
 
             {/* Mobile Title with subtitle - enhanced with perfect gradients */}
             <div className="text-center mb-6">
-              <h1 className="text-3xl [font-family:'Orbitron',Helvetica] font-normal tracking-[0] bg-gradient-to-b from-[#edc84f] via-[#f4d966] to-[#c79c27] bg-clip-text text-transparent mb-1 drop-shadow-[0_0_15px_rgba(237,200,79,0.4)] transition-all duration-500">
-                MYRK
-              </h1>
               <div className="text-white text-xs [font-family:'Oxanium',Helvetica] font-medium tracking-wide opacity-90 transition-all duration-300">
                 ECHOES OF THE FORGOTTEN
               </div>

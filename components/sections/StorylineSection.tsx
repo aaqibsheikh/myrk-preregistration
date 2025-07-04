@@ -41,35 +41,13 @@ export const StorylineSection = (): JSX.Element => {
                 </h2>
 
                 <p className="mt-8 sm:mt-12 md:mt-[68px] [font-family:'Oxanium',Helvetica] font-normal text-gray-400 text-sm sm:text-base leading-relaxed w-full max-w-[613px] transition-all duration-300">
-                  In the realm of MYRK, ancient powers stir as darkness
-                  threatens to consume all. You are the chosen one, destined to
-                  wield forgotten magic and unite the scattered tribes against
-                  an unspeakable evil.
+                  In the world of MYRK, elemental forces once held in harmony have collapsed into chaos, tearing Gaia apart and leaving only echoes of what once was. As one of the reawakened Scions—champions bound to forgotten elemental power—you are thrust into a world on the brink of ruin, where fractured realms, corrupted beasts, and long-buried secrets await. The Astral Gates are stirring, and ancient prophecies are beginning to unfold.
                 </p>
 
                 <p className="mt-6 sm:mt-8 md:mt-[30px] [font-family:'Oxanium',Helvetica] font-normal text-gray-400 text-sm sm:text-base leading-relaxed w-full max-w-[610px] transition-all duration-300">
-                  Journey through mystical forests, treacherous mountains, and
-                  forgotten ruins as you uncover the truth behind the MYRK
-                  prophecy. Your choices will shape the fate of this world and
-                  all who inhabit it.
+                  Venture through the broken world of Gaia as you uncover the mystery behind the First Collapse and your role in what comes next. Your choices will shape the balance between light and shadow, unity and ruin—echoing across Gaia, with the fate of this world in your hands.
                 </p>
 
-                <div className="mt-6 sm:mt-8 md:mt-[30px] flex flex-row gap-4 sm:gap-6 md:gap-8 justify-center lg:justify-start">
-                  {statsData.map((stat, index) => (
-                    <div key={index} className="flex flex-col items-center min-w-[70px] sm:min-w-[80px] md:min-w-[100px] transition-all duration-300">
-                      <div className="text-center">
-                        <span className="[font-family:'Oxanium',Helvetica] font-normal text-orange-400 text-lg sm:text-xl md:text-2xl transition-all duration-300">
-                          {stat.value}
-                        </span>
-                      </div>
-                      <div className="text-center mt-1 sm:mt-2">
-                        <span className="[font-family:'Oxanium',Helvetica] font-normal text-gray-400 text-xs sm:text-sm transition-all duration-300">
-                          {stat.label}
-                        </span>
-                      </div>
-                    </div>
-                  ))}
-                </div>
 
                 {/* Small character images - responsive positioning */}
                 <img
