@@ -127,11 +127,10 @@ export const PreRegistrationSection = forwardRef<HTMLDivElement>((props, ref) =>
                 </div>
               </div>
 
-              <div className="mb-6 sm:mb-7">
+              {/* <div className="mb-6 sm:mb-7">
                 <Select value={formData.platform} onValueChange={(value) => setFormData(prev => ({ ...prev, platform: value }))}>
                   <SelectTrigger className="w-full h-[45px] sm:h-11 bg-[#ffffff1a] border-[#ffffff33] text-white [font-family:'Oxanium',Helvetica] focus:border-[#edc84f] focus:ring-1 focus:ring-[#edc84f] transition-all duration-300">
                     <SelectValue placeholder="Preferred Platform" />
-                    {/* <ChevronDownIcon className="h-6 sm:h-7 w-6 sm:w-7 absolute right-10" /> */}
                   </SelectTrigger>
                   <SelectContent>
                     <SelectItem value="pc">PC</SelectItem>
@@ -142,7 +141,7 @@ export const PreRegistrationSection = forwardRef<HTMLDivElement>((props, ref) =>
                   </SelectContent>
                 </Select>
                 {errors.platform && <p className="text-red-500 text-sm mt-1">{errors.platform}</p>}
-              </div>
+              </div> */}
 
               <div className="flex items-start gap-3 mb-6 sm:mb-7">
                 <Checkbox
