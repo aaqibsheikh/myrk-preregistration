@@ -1,0 +1,270 @@
+@import url('https://fonts.googleapis.com/css2?family=Orbitron:wght@400;700;900&family=Oxanium:wght@300;400;500;600;700&display=swap');
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  :root {
+    --background: 0 0% 100%;
+    --foreground: 222.2 47.4% 11.2%;
+
+    --muted: 210 40% 96.1%;
+    --muted-foreground: 215.4 16.3% 46.9%;
+
+    --popover: 0 0% 100%;
+    --popover-foreground: 222.2 47.4% 11.2%;
+
+    --border: 214.3 31.8% 91.4%;
+    --input: 214.3 31.8% 91.4%;
+
+    --card: transparent;
+    --card-foreground: 222.2 47.4% 11.2%;
+
+    --primary: 222.2 47.4% 11.2%;
+    --primary-foreground: 210 40% 98%;
+
+    --secondary: 210 40% 96.1%;
+    --secondary-foreground: 222.2 47.4% 11.2%;
+
+    --accent: 210 40% 96.1%;
+    --accent-foreground: 222.2 47.4% 11.2%;
+
+    --destructive: 0 100% 50%;
+    --destructive-foreground: 210 40% 98%;
+
+    --ring: 215 20.2% 65.1%;
+
+    --radius: 0.5rem;
+  }
+
+  .dark {
+    --background: 224 71% 4%;
+    --foreground: 213 31% 91%;
+
+    --muted: 223 47% 11%;
+    --muted-foreground: 215.4 16.3% 56.9%;
+
+    --accent: 216 34% 17%;
+    --accent-foreground: 210 40% 98%;
+
+    --popover: 224 71% 4%;
+    --popover-foreground: 215 20.2% 65.1%;
+
+    --border: 216 34% 17%;
+    --input: 216 34% 17%;
+
+    --card: transparent;
+    --card-foreground: 213 31% 91%;
+
+    --primary: 210 40% 98%;
+    --primary-foreground: 222.2 47.4% 1.2%;
+
+    --secondary: 222.2 47.4% 11.2%;
+    --secondary-foreground: 210 40% 98%;
+
+    --destructive: 0 63% 31%;
+    --destructive-foreground: 210 40% 98%;
+
+    --ring: 216 34% 17%;
+
+    --radius: 0.5rem;
+  }
+}
+
+@layer components {
+  .all-\[unset\] {
+    all: unset;
+  }
+  
+  /* Enhanced button styles */
+  .btn-primary {
+    @apply relative overflow-hidden transition-all duration-300 transform hover:scale-105 active:scale-95;
+    background: linear-gradient(180deg, rgba(237,200,79,1) 0%, rgba(199,156,39,1) 100%);
+    box-shadow: 0px 0px 30px rgba(139,69,19,0.5);
+  }
+  
+  .btn-primary::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: -100%;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(90deg, transparent, rgba(255,255,255,0.2), transparent);
+    transition: left 0.5s;
+  }
+  
+  .btn-primary:hover::before {
+    left: 100%;
+  }
+  
+  .btn-primary:hover {
+    box-shadow: 0px 0px 40px rgba(237,200,79,0.8);
+    filter: brightness(1.1);
+  }
+  
+  /* Typography consistency with standardized sizing */
+  .heading-primary {
+    font-family: 'Orbitron', sans-serif;
+    font-weight: 400;
+    line-height: 1.2;
+    text-shadow: 0 0 20px rgba(237,200,79,0.5);
+    @apply text-6xl md:text-8xl lg:text-9xl;
+  }
+  
+  .heading-secondary {
+    font-family: 'Oxanium', sans-serif;
+    font-weight: 600;
+    line-height: 1.3;
+    @apply text-3xl md:text-4xl lg:text-5xl;
+  }
+  
+  .heading-tertiary {
+    font-family: 'Oxanium', sans-serif;
+    font-weight: 600;
+    line-height: 1.4;
+    @apply text-xl md:text-2xl lg:text-3xl;
+  }
+  
+  .text-body {
+    font-family: 'Oxanium', sans-serif;
+    font-weight: 400;
+    line-height: 1.6;
+    @apply text-base md:text-lg lg:text-xl;
+  }
+  
+  .text-body-large {
+    font-family: 'Oxanium', sans-serif;
+    font-weight: 500;
+    line-height: 1.6;
+    @apply text-lg md:text-xl lg:text-2xl;
+  }
+  
+  /* Consistent spacing with standardized values */
+  .section-padding {
+    @apply py-20 md:py-24 lg:py-32;
+  }
+  
+  .section-padding-small {
+    @apply py-12 md:py-16 lg:py-20;
+  }
+  
+  .container-padding {
+    @apply px-6 md:px-8 lg:px-12;
+  }
+  
+  .content-max-width {
+    @apply max-w-7xl mx-auto;
+  }
+  
+  /* Consistent icon styling */
+  .icon-container {
+    @apply w-16 h-16 md:w-20 md:h-20 rounded-xl flex items-center justify-center mb-6 transition-all duration-300;
+    background: linear-gradient(180deg, rgba(237,200,79,1) 0%, rgba(199,156,39,1) 100%);
+  }
+  
+  .icon-container:hover {
+    @apply scale-110;
+    box-shadow: 0 10px 25px rgba(237,200,79,0.5);
+  }
+  
+  .icon-image {
+    @apply w-6 h-6 md:w-8 md:h-8 transition-all duration-300;
+    filter: brightness(0) saturate(100%) invert(0%) sepia(0%) saturate(0%) hue-rotate(0deg) brightness(0%) contrast(100%);
+  }
+  
+  .icon-image:hover {
+    filter: brightness(0) saturate(100%) invert(0%) sepia(0%) saturate(0%) hue-rotate(0deg) brightness(0%) contrast(100%);
+  }
+  
+  /* Card hover effects */
+  .card-interactive {
+    @apply transition-all duration-500 hover:scale-105 hover:shadow-2xl;
+    backdrop-filter: blur(10px);
+    -webkit-backdrop-filter: blur(10px);
+  }
+  
+  .card-interactive:hover {
+    background: rgba(255,255,255,0.15);
+    border-color: rgba(237,200,79,0.4);
+    box-shadow: 0 25px 50px rgba(237,200,79,0.3);
+  }
+  
+  /* Smooth animations */
+  .animate-fade-in {
+    animation: fadeIn 0.6s ease-out;
+  }
+  
+  .animate-slide-up {
+    animation: slideUp 0.8s ease-out;
+  }
+  
+  @keyframes fadeIn {
+    from { opacity: 0; }
+    to { opacity: 1; }
+  }
+  
+  @keyframes slideUp {
+    from { 
+      opacity: 0; 
+      transform: translateY(30px); 
+    }
+    to { 
+      opacity: 1; 
+      transform: translateY(0); 
+    }
+  }
+  
+  /* Modal styles */
+  .modal-overlay {
+    @apply fixed inset-0 bg-black/60 backdrop-blur-sm z-50 flex items-center justify-center;
+    animation: fadeIn 0.3s ease-out;
+  }
+  
+  .modal-content {
+    @apply bg-[#1a1a2e] border border-[#edc84f40] rounded-2xl p-8 max-w-md w-full mx-4;
+    animation: slideUp 0.4s ease-out;
+  }
+  
+  /* Performance optimizations */
+  .optimized-background {
+    will-change: transform;
+    transform: translateZ(0);
+  }
+  
+  .gpu-accelerated {
+    transform: translateZ(0);
+    backface-visibility: hidden;
+    perspective: 1000px;
+  }
+}
+
+@layer base {
+  * {
+    @apply border-border;
+  }
+
+  body {
+    @apply bg-background text-foreground;
+    font-feature-settings: "rlig" 1, "calt" 1;
+    font-family: 'Oxanium', sans-serif;
+    overflow-x: hidden;
+  }
+  
+  /* Smooth scrolling */
+  html {
+    scroll-behavior: smooth;
+  }
+  
+  /* Preload critical fonts */
+  @font-face {
+    font-family: 'Orbitron';
+    font-display: swap;
+  }
+  
+  @font-face {
+    font-family: 'Oxanium';
+    font-display: swap;
+  }
+}
