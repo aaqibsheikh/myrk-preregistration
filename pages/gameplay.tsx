@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useRef } from "react";
 import Head from 'next/head'
 import { Card, CardContent } from "../components/ui/card";
 import { Button } from "../components/ui/button";
@@ -50,6 +50,13 @@ export default function Gameplay() {
     }
   ];
 
+  const preRegRef = useRef<HTMLDivElement>(null);
+  const scrollToPreRegister = () => {
+    if (preRegRef.current) {
+      preRegRef.current.scrollIntoView({ behavior: "smooth" });
+    }
+  };
+
   return (
     <>
       <Head>
@@ -75,7 +82,7 @@ export default function Gameplay() {
       </Head>
       
       <div className="min-h-screen bg-[#0a0a0a] text-white optimized-background animate-fade-in">
-        <HeaderSection />
+        <HeaderSection scrollToPreRegister={scrollToPreRegister} />
      {/* Hero Section */}
       <section className="relative py-20 overflow-hidden">
         <div className="absolute inset-0 bg-gradient-to-b from-[#1a1a2e] via-[#16213e] to-[#0a0a0a] opacity-50"></div>

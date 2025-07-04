@@ -29,16 +29,6 @@ globalThis.__BUILD_MANIFEST = {
       "static/chunks/webpack.js",
       "static/chunks/main.js",
       "static/chunks/pages/community.js"
-    ],
-    "/gameplay": [
-      "static/chunks/webpack.js",
-      "static/chunks/main.js",
-      "static/chunks/pages/gameplay.js"
-    ],
-    "/rewards": [
-      "static/chunks/webpack.js",
-      "static/chunks/main.js",
-      "static/chunks/pages/rewards.js"
     ]
   },
   "ampFirstPages": []

@@ -4,6 +4,5 @@
   "/_document": "pages/_document.js",
   "/": "pages/index.js",
   "/community": "pages/community.js",
-  "/gameplay": "pages/gameplay.js",
   "/rewards": "pages/rewards.js"
 }

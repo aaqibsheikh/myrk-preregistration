@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useRef } from "react";
 import Head from 'next/head'
 import { Card, CardContent } from "../components/ui/card";
 import { Button } from "../components/ui/button";
@@ -44,7 +44,12 @@ export default function Features() {
       details: "Over 500 craftable items with enchantment systems for ultimate customization."
     }
   ];
-
+  const preRegRef = useRef<HTMLDivElement>(null);
+  const scrollToPreRegister = () => {
+    if (preRegRef.current) {
+      preRegRef.current.scrollIntoView({ behavior: "smooth" });
+    }
+  };
   return (
     <>
       <Head>
@@ -70,7 +75,7 @@ export default function Features() {
       </Head>
       
       <div className="min-h-screen bg-[#0a0a0a] text-white optimized-background animate-fade-in">
-        <HeaderSection />
+        <HeaderSection scrollToPreRegister={scrollToPreRegister} />
         
       {/* Hero Section */}
       <section className="relative py-20 overflow-hidden">
