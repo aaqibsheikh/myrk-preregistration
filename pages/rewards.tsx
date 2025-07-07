@@ -160,14 +160,14 @@ export default function Rewards() {
             <p className="text-xl md:text-2xl [font-family:'Oxanium',Helvetica] font-medium text-gray-300 max-w-3xl mx-auto leading-relaxed mb-8">
               Unlock incredible rewards by pre-registering for MYRK today
             </p>
-            <div className="bg-[#ffffff08] backdrop-blur-md border-[#edc84f40] rounded-2xl p-6 max-w-2xl mx-auto">
+            {/* <div className="bg-[#ffffff08] backdrop-blur-md border-[#edc84f40] rounded-2xl p-6 max-w-2xl mx-auto">
               <p className="text-3xl [font-family:'Orbitron',Helvetica] font-normal text-[#edc84f] mb-2">
                 Total Value: $149.94
               </p>
               <p className="text-lg [font-family:'Oxanium',Helvetica] text-gray-300">
                 Completely FREE for pre-registered players
               </p>
-            </div>
+            </div> */}
           </div>
         </section>
 
