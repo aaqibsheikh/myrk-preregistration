@@ -9,21 +9,21 @@ export default function Gameplay() {
   const gameplayElements = [
     {
       title: "Combat System",
-      description: "Experience dynamic real-time combat with fluid animations and strategic depth.",
+      description: " Engage in strategic turn-based battles where your Echo Companions fight alongside you using elemental power and tactical synergy.",
       image: "/figmaAssets/gau-1-1.png",
-      features: ["Real-time combat mechanics", "Combo system", "Elemental magic", "Weapon mastery"]
+      features: ["Turn-based combat with tactical depth", "Echo Companion command system", "Elemental affinity & synergy effects", "Unlockable abilities and skill combos"]
     },
     {
       title: "World Exploration",
-      description: "Traverse vast open worlds filled with secrets, dungeons, and hidden treasures.",
+      description: "Navigate a 1:1 GPS-based world where real locations transform into legendary zones filled with danger, discovery, and adventure.",
       image: "/figmaAssets/gau2-1.png",
-      features: ["Open world design", "Hidden secrets", "Dynamic events", "Environmental puzzles"]
+      features: ["Fortress outposts", "Astral Gate boss battles", "Discover NPC quests", "Elemental Echo encounters"]
     },
     {
       title: "Character Development",
-      description: "Shape your hero's destiny through choices, skills, and magical abilities.",
-      image: "/figmaAssets/gau-1-1.png",
-      features: ["Skill tree progression", "Equipment customization", "Moral choices", "Character builds"]
+      description: "Shape your hero’s destiny through a wide range of equipment and companions.",
+      image: "/figmaAssets/brutoxar.png",
+      features: ["Echo Companion progression", "Equipment loadout", "Cosmetic customization", "Build versatility"]
     }
   ];
 
@@ -31,22 +31,22 @@ export default function Gameplay() {
     {
       icon: "/figmaAssets/frame-2.svg",
       title: "Quest System",
-      description: "Dynamic quests that adapt to your playstyle and choices"
+      description: "Complete daily, weekly, and world quests to grow your legacy."
     },
     {
       icon: "/figmaAssets/frame-3.svg",
       title: "Magic System",
-      description: "Master elemental magic with complex spell combinations"
+      description: "Master elemental magic through the unique powers of your Echo companions."
     },
     {
       icon: "/figmaAssets/frame-4.svg",
       title: "Social Features",
-      description: "Guild system, trading, and cooperative adventures"
+      description: "Join clans, battle bosses, and chat with allies."
     },
     {
       icon: "/figmaAssets/frame-5.svg",
-      title: "PvP Combat",
-      description: "Competitive battles in designated arenas and territories"
+      title: "Companion Mastery",
+      description: "Summon companions, level them up, and unlock powerful evolutions."
     }
   ];
 

@@ -1,17 +1,18 @@
 import React from "react";
 
+import Link from "next/link";
 export const FooterSection = (): JSX.Element => {
   // Social media icons data with active links
   const socialIcons = [
-    { 
-      src: "/figmaAssets/frame-4.svg", 
-      alt: "Discord", 
+    {
+      src: "/figmaAssets/frame-4.svg",
+      alt: "Discord",
       link: "https://discord.gg/myrk-game",
       width: "w-5"
     },
-    { 
-      src: "/figmaAssets/frame-10.svg", 
-      alt: "Twitter", 
+    {
+      src: "/figmaAssets/frame-10.svg",
+      alt: "Twitter",
       link: "https://twitter.com/myrk_game",
       width: "w-5"
     },
@@ -19,21 +20,21 @@ export const FooterSection = (): JSX.Element => {
       src: "/figmaAssets/frame-7.svg",
       alt: "Instagram",
       link: "https://instagram.com/myrk_game",
-      width: "w-3.5",
+      width: "w-3.5"
     },
-    { 
-      src: "/figmaAssets/frame.svg", 
-      alt: "YouTube", 
+    {
+      src: "/figmaAssets/frame.svg",
+      alt: "YouTube",
       link: "https://youtube.com/@myrk-game",
-      width: "w-5" 
-    },
+      width: "w-5"
+    }
   ];
 
   // Footer links data
   const footerLinks = [
     { text: "Contact Us", href: "#" },
     { text: "Terms of Service", href: "#" },
-    { text: "Privacy Policy", href: "#" },
+    { text: "Privacy Policy", href: "#" }
   ];
 
   return (
@@ -43,7 +44,7 @@ export const FooterSection = (): JSX.Element => {
           {/* Logo and content container */}
           <div className="flex flex-col items-center gap-6 sm:gap-8 md:gap-10">
             {/* Logo */}
-            <div className="flex items-center">
+            {/* <div className="flex items-center">
               <div className="w-8 sm:w-9 md:w-10 h-8 sm:h-9 md:h-10 rounded-lg mr-2 sm:mr-3 flex items-center justify-center bg-gradient-to-br from-[#edc84f] to-[#c79c27] transition-all duration-300">
                 <div className="[font-family:'Orbitron',Helvetica] font-normal text-black text-lg sm:text-xl">
                   M
@@ -52,7 +53,20 @@ export const FooterSection = (): JSX.Element => {
               <div className="[font-family:'Orbitron',Helvetica] font-normal text-white text-xl sm:text-2xl leading-tight whitespace-nowrap transition-all duration-300">
                 MYRK
               </div>
-            </div>
+            </div> */}
+            <Link
+              href="/"
+              className="flex items-center h-8 md:h-10 transition-all duration-300 hover:scale-105"
+            >
+              <img
+                className="w-8 h-8 md:w-10 md:h-10 object-contain mr-2 md:mr-3 transition-all duration-300"
+                alt="MYRK Logo"
+                src="/figmaAssets/logo-1.png"
+              />
+              <div className="[font-family:'Orbitron',Helvetica] font-normal text-white text-lg md:text-xl leading-tight whitespace-nowrap transition-all duration-300">
+                MYRK
+              </div>
+            </Link>
 
             {/* Links */}
             <div className="flex flex-col sm:flex-row justify-center gap-4 sm:gap-8 md:gap-12">
@@ -76,15 +90,17 @@ export const FooterSection = (): JSX.Element => {
             {/* Social Media Icons - Active Links */}
             <div className="flex gap-3 sm:gap-4 mt-1 sm:mt-2">
               {socialIcons.map((icon, index) => (
-                <a 
-                  key={index} 
+                <a
+                  key={index}
                   href={icon.link}
                   target="_blank"
                   rel="noopener noreferrer"
                   className="flex items-center justify-center hover:scale-110 transition-all duration-300 cursor-pointer p-2 rounded-lg hover:bg-[#ffffff0a]"
                 >
                   <img
-                    className={`${icon.width || "w-4"} h-4 transition-all duration-300 hover:brightness-125`}
+                    className={`${
+                      icon.width || "w-4"
+                    } h-4 transition-all duration-300 hover:brightness-125`}
                     alt={icon.alt}
                     src={icon.src}
                   />

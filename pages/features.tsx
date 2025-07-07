@@ -9,39 +9,39 @@ export default function Features() {
   const features = [
     {
       title: "Epic Quests",
-      description: "Embark on legendary adventures across mystical realms filled with ancient mysteries and forgotten treasures.",
+      // details: "Embark on legendary adventures across mystical realms filled with ancient mysteries and forgotten treasures.",
       icon: "/figmaAssets/frame-2.svg",
-      details: "Experience immersive storylines with branching narratives that adapt to your choices and playstyle."
+      description: "Uncover ancient secrets through immersive story quests that span both a rich fantasy campaign and the real world around you. Encounter NPCs across Gaia who offer quests, lore, and challenges that bring the world of MYRK to life wherever you go."
     },
     {
       title: "Character Progression",
-      description: "Develop your unique hero through skill trees, equipment upgrades, and magical enhancements.",
+      // details: "Develop your unique hero through skill trees, equipment upgrades, and magical enhancements.",
       icon: "/figmaAssets/frame-3.svg",
-      details: "Unlock powerful abilities and customize your character's appearance with hundreds of options."
+      description: "Develop your unique hero through equipment upgrades and magical enhancements. Customize your appearance with a wide range of styles and cosmetics available through our in-game marketplace."
     },
     {
-      title: "Mythical Creatures",
-      description: "Battle legendary beasts and creatures from ancient folklore in stunning environments.",
+      title: "Elemental Echoes",
+      // details: "Battle legendary beasts and creatures from ancient folklore in stunning environments.",
       icon: "/figmaAssets/frame-4.svg",
-      details: "Each creature has unique AI behaviors and requires different strategies to defeat."
+      description: "Discover and battle Echoes—creatures born of elemental chaos, each shaped by the fractured world of Gaia. Harness their power or face their wrath, as each Echo possesses unique abilities, affinities, and combat behaviors that demand strategy and adaptation."
     },
     {
-      title: "Magical Realms",
-      description: "Explore breathtaking worlds filled with magic, wonder, and hidden secrets waiting to be discovered.",
+      title: "Clan System",
+      // details: "Explore breathtaking worlds filled with magic, wonder, and hidden secrets waiting to be discovered.",
       icon: "/figmaAssets/frame-5.svg",
-      details: "Dynamic weather systems and day/night cycles create ever-changing atmospheric experiences."
+      description: "Create a clan with fellow Scions, assign roles, and level up together as you climb the clan leaderboard.Complete clan quests and face powerful clan bosses in battles that test your teamwork and strategy."
     },
     {
       title: "Cooperative Gameplay",
-      description: "Team up with friends to tackle challenging dungeons and epic boss battles together.",
+      // details: "Team up with friends to tackle challenging dungeons and epic boss battles together.",
       icon: "/figmaAssets/frame-6.svg",
-      details: "Cross-platform multiplayer supports up to 4 players in seamless co-op adventures."
+      description: "Team up with friends to take on challenging fortresses and epic gate boss battles across Gaia. Form a clan or party to rally allies and conquer these legendary encounters together."
     },
     {
-      title: "Crafting System",
-      description: "Create powerful weapons, armor, and magical items using resources found throughout your journey.",
+      title: "Dynamic Quest System",
+      // details: "Create powerful weapons, armor, and magical items using resources found throughout your journey.",
       icon: "/figmaAssets/frame-7.svg",
-      details: "Over 500 craftable items with enchantment systems for ultimate customization."
+      description: "Stay engaged with daily and weekly quests, world-based NPC missions, and exclusive clan objectives. Whether you're exploring Gaia solo or with allies, there's always a new challenge waiting to earn rewards and advance your legend."
     }
   ];
   const preRegRef = useRef<HTMLDivElement>(null);
@@ -120,9 +120,9 @@ export default function Features() {
                     {feature.description}
                   </p>
 
-                  <p className="text-gray-400 text-sm font-normal [font-family:'Oxanium',Helvetica] leading-relaxed transition-all duration-300 group-hover:text-gray-300">
+                  {/* <p className="text-gray-400 text-sm font-normal [font-family:'Oxanium',Helvetica] leading-relaxed transition-all duration-300 group-hover:text-gray-300">
                     {feature.details}
-                  </p>
+                  </p> */}
                 </CardContent>
               </Card>
             ))}

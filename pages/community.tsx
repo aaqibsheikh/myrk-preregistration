@@ -65,9 +65,9 @@ export default function Community() {
 
   const communityFeatures = [
     {
-      title: "Guild System",
+      title: "Clan System",
       description:
-        "Form alliances with other players, participate in guild wars, and share resources.",
+        "Form alliances with other players, participate in clan quests and bosses.",
       icon: "/figmaAssets/frame-2.svg"
     },
     {
@@ -169,7 +169,7 @@ export default function Community() {
         </section>
 
         {/* Community Stats */}
-        <section className="py-16 px-4">
+        {/* <section className="py-16 px-4">
           <div className="max-w-6xl mx-auto">
             <div className="grid grid-cols-2 md:grid-cols-4 gap-6">
               {stats.map((stat, index) => (
@@ -184,7 +184,7 @@ export default function Community() {
               ))}
             </div>
           </div>
-        </section>
+        </section> */}
 
         {/* Social Platforms */}
         <section className="py-16 px-4">

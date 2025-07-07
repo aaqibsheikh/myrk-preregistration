@@ -14,7 +14,7 @@ export const GameFeaturesSection = (): JSX.Element => {
       icon: "/figmaAssets/frame-12.svg",
       title: "Vast Open World",
       description:
-        "Explore diverse realms filled with hidden treasures, ancient ruins, and mysterious creatures.",
+        "Explore a 1:1 GPS-based world where real locations transform into mystical realms filled with secrets, ruins, and adventure.",
     },
     {
       icon: "/figmaAssets/frame-15.svg",
