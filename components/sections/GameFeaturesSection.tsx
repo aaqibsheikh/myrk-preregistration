@@ -8,7 +8,7 @@ export const GameFeaturesSection = (): JSX.Element => {
       icon: "/figmaAssets/group.png",
       title: "Epic Combat System",
       description:
-        "Command your Echo Companions and unleash powerful abilities in real-time combat against formidable mythical foes.",
+        "Command your Echo Companions and unleash powerful abilities in turn-based combat against formidable mythical foes.",
     },
     {
       icon: "/figmaAssets/frame-12.svg",
