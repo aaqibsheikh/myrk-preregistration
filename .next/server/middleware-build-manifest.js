@@ -14,6 +14,7 @@ globalThis.__BUILD_MANIFEST = {
       "static/chunks/webpack.js",
       "static/chunks/vendors.js",
       "static/chunks/main.js",
+      "static/chunks/default-_pages-dir-browser_components_sections_FooterSection_tsx-_pages-dir-browser_component-8ae2e8.js",
       "static/chunks/pages/index.js"
     ],
     "/_app": [
@@ -27,6 +28,13 @@ globalThis.__BUILD_MANIFEST = {
       "static/chunks/vendors.js",
       "static/chunks/main.js",
       "static/chunks/pages/_error.js"
+    ],
+    "/features": [
+      "static/chunks/webpack.js",
+      "static/chunks/vendors.js",
+      "static/chunks/main.js",
+      "static/chunks/default-_pages-dir-browser_components_sections_FooterSection_tsx-_pages-dir-browser_component-8ae2e8.js",
+      "static/chunks/pages/features.js"
     ]
   },
   "ampFirstPages": []
