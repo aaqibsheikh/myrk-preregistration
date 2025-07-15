@@ -64,11 +64,15 @@ export default function Rewards() {
   ];
 
   const milestones = [
-    { count: "10K", reward: "Exclusive Weapon Skin", achieved: true },
-    { count: "25K", reward: "Legendary Mount", achieved: true },
-    { count: "50K", reward: "Beta Access", achieved: true },
-    { count: "100K", reward: "Special Event", achieved: false },
-    { count: "250K", reward: "Bonus Chapter", achieved: false }
+    { count: "10K", reward: "Exclusive Weapon Gearfang Talon", achieved: true },
+    { count: "25K", reward: "Exclusive Armor MagTech Aegis", achieved: true },
+    { count: "50K", reward: "Exclusive Helm Shockspire Crown", achieved: true },
+    { count: "100K", reward: "2500 Gold", achieved: false },
+    {
+      count: "250K",
+      reward: "250 Gems + 50 Shards for Bruisic",
+      achieved: false
+    }
   ];
 
   const getRarityColor = (rarity: string) => {

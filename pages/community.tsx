@@ -17,22 +17,13 @@ export default function Community() {
       color: "from-[#5865f2] to-[#4752c4]"
     },
     {
-      name: "Twitter",
+      name: "X (Twitter)",
       description:
         "Follow us for the latest updates, behind-the-scenes content, and community highlights.",
       members: "25K+ Followers",
-      icon: "https://cdn.jsdelivr.net/npm/simple-icons@v9/icons/twitter.svg",
-      link: "https://twitter.com/myrk_game",
-      color: "from-[#1da1f2] to-[#0d8bd9]"
-    },
-    {
-      name: "Reddit",
-      description:
-        "Discuss strategies, share content, and connect with fellow adventurers in our subreddit.",
-      members: "15K+ Members",
-      icon: "https://cdn.jsdelivr.net/npm/simple-icons@v9/icons/reddit.svg",
-      link: "https://reddit.com/r/myrk",
-      color: "from-[#ff4500] to-[#e63900]"
+      icon: "https://cdn.jsdelivr.net/npm/simple-icons@v9/icons/x.svg",
+      link: "https://x.com/PenguinPWS",
+      color: "from-[#000000] to-[#333333]"
     },
     {
       name: "YouTube",
@@ -40,7 +31,7 @@ export default function Community() {
         "Watch gameplay videos, developer diaries, and community showcases on our channel.",
       members: "30K+ Subscribers",
       icon: "https://cdn.jsdelivr.net/npm/simple-icons@v9/icons/youtube.svg",
-      link: "https://youtube.com/@myrk-game",
+      link: "https://www.youtube.com/@penguinpixelworks",
       color: "from-[#ff0000] to-[#cc0000]"
     },
     {
@@ -49,8 +40,17 @@ export default function Community() {
         "Visual updates, concept art, and behind-the-scenes glimpses of MYRK's development.",
       members: "20K+ Followers",
       icon: "https://cdn.jsdelivr.net/npm/simple-icons@v9/icons/instagram.svg",
-      link: "https://instagram.com/myrk_game",
+      link: "https://www.instagram.com/penguinpixelworks/",
       color: "from-[#e4405f] to-[#c13584]"
+    },
+    {
+      name: "Facebook",
+      description:
+        "Follow us for community events and game updates directly on your feed.",
+      members: "15K+ Followers",
+      icon: "https://cdn.jsdelivr.net/npm/simple-icons@v9/icons/facebook.svg",
+      link: "https://www.facebook.com/MYRK.EotF",
+      color: "from-[#3b5998] to-[#1c3b7d]"
     },
     {
       name: "TikTok",
@@ -58,7 +58,7 @@ export default function Community() {
         "Quick gameplay clips, developer insights, and community challenges in short-form content.",
       members: "40K+ Followers",
       icon: "https://cdn.jsdelivr.net/npm/simple-icons@v9/icons/tiktok.svg",
-      link: "https://tiktok.com/@myrk_game",
+      link: "https://www.tiktok.com/@myrkechoesoftheforgotten",
       color: "from-[#000000] to-[#333333]"
     }
   ];
