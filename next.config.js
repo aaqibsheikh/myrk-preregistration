@@ -4,9 +4,11 @@ const nextConfig = {
   poweredByHeader: false,
   compress: true,
   
-  // Performance optimizations
+  // Performance optimizations for Replit environment
   experimental: {
     // optimizeCss: true, // Disabled due to missing critters dependency
+    workerThreads: false, // Disable worker threads to reduce resource usage
+    cpus: 1, // Limit to single CPU core
   },
   
   // Image optimization
@@ -48,19 +50,33 @@ const nextConfig = {
     ];
   },
   
-  // Enable webpack optimizations
+  // Enable webpack optimizations with resource limits
   webpack: (config, { dev, isServer }) => {
-    if (!dev && !isServer) {
-      config.optimization.splitChunks.chunks = 'all';
-      config.optimization.splitChunks.cacheGroups = {
-        ...config.optimization.splitChunks.cacheGroups,
-        commons: {
-          name: 'commons',
-          chunks: 'all',
+    // Limit memory usage and threads
+    config.optimization.minimize = !dev;
+    config.optimization.splitChunks = {
+      chunks: 'all',
+      maxInitialRequests: 10,
+      maxAsyncRequests: 10,
+      cacheGroups: {
+        default: {
           minChunks: 2,
+          priority: -20,
+          reuseExistingChunk: true,
         },
-      };
-    }
+        vendor: {
+          test: /[\\/]node_modules[\\/]/,
+          name: 'vendors',
+          priority: -10,
+          chunks: 'all',
+        },
+      },
+    };
+    
+    // Reduce resource consumption
+    config.parallelism = 1;
+    config.cache = false;
+    
     return config;
   },
 }

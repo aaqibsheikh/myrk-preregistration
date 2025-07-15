@@ -1,0 +1,112 @@
+I'm updating an existing website built with Next.js + Tailwind CSS for a fantasy MMORPG called MYRK.
+
+Please only add the following sections or components if they are not already implemented in the project. Do not replace or remove any existing working sections or styles.
+
+🧊 Add If Missing:
+Hero Section Enhancements
+
+If not already present:
+
+Add animated or video background.
+
+Add a short lore-style tagline.
+
+Add 2 buttons: “Pre-Register” and “Join Discord”.
+
+Add smooth scroll navigation for section links.
+
+Newsletter Signup – “Signal from the Void”
+
+If newsletter form doesn’t exist:
+
+Add a new section styled like a cosmic transmission.
+
+Include an email input and submit button.
+
+Title: “Align with the Signal”.
+
+Hook it up to Firebase or Mailgun (optional).
+
+Features Grid
+
+If there is no grid showing game features:
+
+Add a responsive 2x2 grid showing:
+
+Open World
+
+Multiplayer
+
+AR Mechanics
+
+Token/NFT Ecosystem
+
+Each item should include icon, title, and short description.
+
+Teaser Video Section
+
+If no video section exists:
+
+Add a section with an embedded YouTube trailer.
+
+Add CTA: “Watch Trailer” or “Coming Soon”.
+
+Game Overview Section
+
+If not already included:
+
+Add a short game description section.
+
+Optionally include an animated image or background.
+
+CTA: “Learn More” or “Explore Lore”.
+
+Frozen Vault Section (Gamified Unlockables)
+
+If not present:
+
+Add a themed “Vault” section where users see tasks and rewards.
+
+Show tasks like: sign up, share, solve puzzle (UI only).
+
+Show possible rewards like wallpapers, comics, cosmetics.
+
+No backend needed — only layout and placeholder behavior.
+
+Floating Chatbot Placeholder – “Myrk the Prophet”
+
+If chatbot or floating helper doesn’t exist:
+
+Add a floating button: “Chat with Myrk”.
+
+On click, show a box with text: “Coming Soon – Myrk the Prophet will guide you.”
+
+Use animations or subtle glowing orb effect (optional).
+
+Footer
+
+If not already present:
+
+Add Discord, Twitter, Telegram icons.
+
+Add placeholder text for: Company Info, Terms, and Privacy links.
+
+🎨 Styling Guidelines (Only If Not Done Yet):
+Use dark mode as default.
+
+Use fantasy + sci-fi hybrid design (mystical and futuristic).
+
+Add Framer Motion animations for smooth scroll/entry.
+
+Use Tailwind CSS utilities for layout.
+
+Use a mix of modern and fantasy fonts if not already styled.
+
+✅ Final Notes:
+Do not modify existing components unless incomplete.
+
+Only add new sections if they are clearly missing.
+
+Keep everything responsive and clean.
+
+Focus only on frontend layout and animation, not backend logic for now.

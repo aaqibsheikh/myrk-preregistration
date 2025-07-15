@@ -11,6 +11,9 @@ import { CommunityEngagementSection } from "../components/sections/CommunityEnga
 import { StorylineSection } from "../components/sections/StorylineSection";
 import { OptionalFeaturesSection } from "../components/sections/OptionalFeaturesSection";
 import { FooterSection } from "../components/sections/FooterSection";
+import { FrozenVaultSection } from "../components/sections/FrozenVaultSection";
+import { SignalFromTheVoidSection } from "../components/sections/SignalFromTheVoidSection";
+import { FloatingChatbot } from "../components/ui/floating-chatbot";
 
 export default function Home() {
   const preRegRef = useRef<HTMLDivElement>(null);
@@ -73,13 +76,16 @@ export default function Home() {
         <HeroSection scrollToPreRegister={scrollToPreRegister} />
         <GameFeaturesSection />
         <TrailerGameplaySection />
+        <FrozenVaultSection />
         <ExclusiveRewardsSection />
         <PreRegistrationSection ref={preRegRef} />
         <CountdownTimerSection />
+        <SignalFromTheVoidSection />
         <CommunityEngagementSection />
         <StorylineSection />
         <OptionalFeaturesSection />
         <FooterSection />
+        <FloatingChatbot />
       </div>
     </>
   );
