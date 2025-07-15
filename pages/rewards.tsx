@@ -1,4 +1,4 @@
-import React, { useRef } from "react";
+import React, { useRef, useState } from "react";
 import Head from "next/head";
 import { Card, CardContent } from "../components/ui/card";
 import { Button } from "../components/ui/button";
@@ -6,6 +6,9 @@ import { HeaderSection } from "../components/sections/HeaderSection";
 import { FooterSection } from "../components/sections/FooterSection";
 
 export default function Rewards() {
+  const [previewImage, setPreviewImage] = useState<string | null>(null);
+  const [previewTitle, setPreviewTitle] = useState<string | null>(null);
+
   const exclusiveRewards = [
     {
       title: "Legendary Weapon Pack",
@@ -63,15 +66,48 @@ export default function Rewards() {
     }
   ];
 
+  // const milestones = [
+  //   { count: "10K", reward: "Exclusive Weapon Gearfang Talon", achieved: true },
+  //   { count: "25K", reward: "Exclusive Armor MagTech Aegis", achieved: true },
+  //   { count: "50K", reward: "Exclusive Helm Shockspire Crown", achieved: true },
+  //   { count: "100K", reward: "2500 Gold", achieved: false },
+  //   {
+  //     count: "250K",
+  //     reward: "250 Gems + 50 Shards for Bruisic",
+  //     achieved: false
+  //   }
+  // ];
+
   const milestones = [
-    { count: "10K", reward: "Exclusive Weapon Gearfang Talon", achieved: true },
-    { count: "25K", reward: "Exclusive Armor MagTech Aegis", achieved: true },
-    { count: "50K", reward: "Exclusive Helm Shockspire Crown", achieved: true },
-    { count: "100K", reward: "2500 Gold", achieved: false },
+    {
+      count: "10K",
+      reward: "Exclusive Weapon Gearfang Talon",
+      achieved: true,
+      image: "/rewards/gearfang-talon.png"
+    },
+    {
+      count: "25K",
+      reward: "Exclusive Armor MagTech Aegis",
+      achieved: true,
+      image: "/rewards/magtech-aegis.png"
+    },
+    {
+      count: "50K",
+      reward: "Exclusive Helm Shockspire Crown",
+      achieved: true,
+      image: "/rewards/shockspire-crown.png"
+    },
+    {
+      count: "100K",
+      reward: "2500 Gold",
+      achieved: false,
+      image: "/rewards/myrk-gold-coin.png"
+    },
     {
       count: "250K",
       reward: "250 Gems + 50 Shards for Bruisic",
-      achieved: false
+      achieved: false,
+      image: "/rewards/premium-gem-and-bruisic-shard.png"
     }
   ];
 
@@ -270,26 +306,50 @@ export default function Rewards() {
                   </div>
 
                   <div className="flex-grow">
-                    <h3
-                      className={`text-xl [font-family:'Oxanium',Helvetica] font-semibold mb-1 ${
-                        milestone.achieved ? "text-[#edc84f]" : "text-white"
-                      }`}
-                    >
-                      {milestone.count} Pre-Registrations
-                    </h3>
-                    <p className="text-gray-300 [font-family:'Oxanium',Helvetica]">
-                      Unlocks: {milestone.reward}
-                    </p>
+                    <div className="flex items-center space-x-10">
+                      <div className="flex flex-col">
+                        <h3
+                          className={`text-xl [font-family:'Oxanium',Helvetica] font-semibold ${
+                            milestone.achieved ? "text-[#edc84f]" : "text-white"
+                          }`}
+                        >
+                          {milestone.count} Pre-Registrations
+                        </h3>
+
+                        <p className="text-sm text-gray-300 [font-family:'Oxanium',Helvetica]">
+                          Unlocks:{" "}
+                          <span className="text-white">{milestone.reward}</span>
+                        </p>
+                      </div>
+                    </div>
                   </div>
 
-                  <div
-                    className={`px-4 py-2 rounded-full text-sm font-semibold [font-family:'Oxanium',Helvetica] ${
-                      milestone.achieved
-                        ? "bg-green-500/20 text-green-400 border border-green-500/30"
-                        : "bg-gray-500/20 text-gray-400 border border-gray-500/30"
-                    }`}
-                  >
-                    {milestone.achieved ? "Achieved" : "Locked"}
+                  <div className="flex items-center space-x-10">
+                    {milestone.image && (
+                      <div
+                        className="w-14 h-14 rounded-lg bg-[#1e1e1e] border border-[#ffffff20] flex items-center justify-center shadow-md cursor-pointer transition hover:ring-2 hover:ring-[#edc84f]"
+                        onClick={() => {
+                          setPreviewImage(milestone.image);
+                          setPreviewTitle(milestone.reward);
+                        }}
+                        title="Click to preview"
+                      >
+                        <img
+                          src={milestone.image}
+                          alt={milestone.reward}
+                          className="max-w-[80%] max-h-[80%] object-contain"
+                        />
+                      </div>
+                    )}
+                    <div
+                      className={`px-4 py-2 rounded-full text-sm font-semibold [font-family:'Oxanium',Helvetica] ${
+                        milestone.achieved
+                          ? "bg-green-500/20 text-green-400 border border-green-500/30"
+                          : "bg-gray-500/20 text-gray-400 border border-gray-500/30"
+                      }`}
+                    >
+                      {milestone.achieved ? "Achieved" : "Locked"}
+                    </div>
                   </div>
                 </div>
               ))}
@@ -317,6 +377,33 @@ export default function Rewards() {
             </Button>
           </div>
         </section>
+
+        {previewImage && (
+          <div className="fixed inset-0 bg-black bg-opacity-80 flex items-center justify-center z-50">
+            <div className="relative p-4">
+              <button
+                className="absolute top-2 right-2 text-white text-2xl bg-[#222] rounded-full px-2 hover:bg-[#edc84f] hover:text-black transition"
+                onClick={() => {
+                  setPreviewImage(null);
+                  setPreviewTitle(null);
+                }}
+                title="Close"
+              >
+                &times;
+              </button>
+              <img
+                src={previewImage}
+                alt={previewTitle || "Preview"}
+                className="max-h-[70vh] max-w-[90vw] rounded-xl shadow-2xl border-2 border-[#edc84f]"
+              />
+              {previewTitle && (
+                <div className="mt-4 text-center text-lg text-[#edc84f] font-semibold [font-family:'Oxanium',Helvetica] drop-shadow-lg">
+                  {previewTitle}
+                </div>
+              )}
+            </div>
+          </div>
+        )}
 
         <FooterSection />
       </div>
