@@ -289,7 +289,7 @@ export default function Rewards() {
               {milestones.map((milestone, index) => (
                 <div
                   key={index}
-                  className={`flex items-center p-6 rounded-2xl border transition-all duration-300 ${
+                  className={`flex sm:items-center sm:flex-row flex-col sm:space-y-0 space-y-4 p-6 rounded-2xl border transition-all duration-300 ${
                     milestone.achieved
                       ? "bg-[#edc84f08] border-[#edc84f40] shadow-lg shadow-[#edc84f]/20"
                       : "bg-[#ffffff08] border-[#ffffff15]"
@@ -379,10 +379,11 @@ export default function Rewards() {
         </section>
 
         {previewImage && (
-          <div className="fixed inset-0 bg-black bg-opacity-80 flex items-center justify-center z-50">
-            <div className="relative p-4">
+          <div className="fixed inset-0 bg-black bg-opacity-80 flex items-center justify-center z-50 p-2 sm:p-8 overflow-y-auto">
+            <div className="relative bg-transparent w-full max-w-xl mx-auto flex flex-col items-center">
               <button
-                className="absolute top-2 right-2 text-white text-2xl bg-[#222] rounded-full px-2 hover:bg-[#edc84f] hover:text-black transition"
+                className="absolute top-2 right-2 text-white text-3xl bg-[#222] rounded-full p-3 hover:bg-[#edc84f] hover:text-black transition z-10"
+                style={{ touchAction: "manipulation" }}
                 onClick={() => {
                   setPreviewImage(null);
                   setPreviewTitle(null);
@@ -394,10 +395,11 @@ export default function Rewards() {
               <img
                 src={previewImage}
                 alt={previewTitle || "Preview"}
-                className="max-h-[70vh] max-w-[90vw] rounded-xl shadow-2xl border-2 border-[#edc84f]"
+                className="w-full max-w-[90vw] max-h-[70vh] sm:max-h-[80vh] rounded-xl shadow-2xl border-2 border-[#edc84f] object-contain bg-[#111]"
+                style={{ marginTop: "2.5rem" }}
               />
               {previewTitle && (
-                <div className="mt-4 text-center text-lg text-[#edc84f] font-semibold [font-family:'Oxanium',Helvetica] drop-shadow-lg">
+                <div className="mt-4 text-center text-base sm:text-lg text-[#edc84f] font-semibold [font-family:'Oxanium',Helvetica] drop-shadow-lg">
                   {previewTitle}
                 </div>
               )}
