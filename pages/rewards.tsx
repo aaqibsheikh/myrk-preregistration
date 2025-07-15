@@ -8,8 +8,7 @@ import { FooterSection } from "../components/sections/FooterSection";
 export default function Rewards() {
   const [previewImage, setPreviewImage] = useState<string | null>(null);
   const [previewTitle, setPreviewTitle] = useState<string | null>(null);
-
-  const exclusiveRewards = [
+ const exclusiveRewards = [
     {
       title: "Legendary Weapon Pack",
       description:
@@ -110,7 +109,6 @@ export default function Rewards() {
       image: "/rewards/premium-gem-and-bruisic-shard.png"
     }
   ];
-
   const getRarityColor = (rarity: string) => {
     switch (rarity) {
       case "Legendary":
@@ -276,7 +274,7 @@ export default function Rewards() {
         </section>
 
         {/* Community Milestones */}
-        <section className="py-16 px-4 bg-gradient-to-b from-[#0a0a0a] to-[#1a1a2e]">
+        {/* <section className="py-16 px-4 bg-gradient-to-b from-[#0a0a0a] to-[#1a1a2e]">
           <div className="max-w-6xl mx-auto">
             <h2 className="text-4xl [font-family:'Orbitron',Helvetica] font-normal text-center text-white mb-4">
               Community Milestones
@@ -327,7 +325,7 @@ export default function Rewards() {
                   <div className="flex items-center space-x-10">
                     {milestone.image && (
                       <div
-                        className="w-14 h-14 rounded-lg bg-[#1e1e1e] border border-[#ffffff20] flex items-center justify-center shadow-md cursor-pointer transition hover:ring-2 hover:ring-[#edc84f]"
+                        className="w-14 h-14 rounded-lg bg-[#1e1e1e] border border-[#ffffff20] flex items-center justify-center shadow-md cursor-pointer transition hover:ring-2 hover:ring-[#edc84f] hover:bg-[#2a2a2a]"
                         onClick={() => {
                           setPreviewImage(milestone.image);
                           setPreviewTitle(milestone.reward);
@@ -337,7 +335,7 @@ export default function Rewards() {
                         <img
                           src={milestone.image}
                           alt={milestone.reward}
-                          className="max-w-[80%] max-h-[80%] object-contain"
+                          className="max-w-[80%] max-h-[80%] object-contain filter drop-shadow-md"
                         />
                       </div>
                     )}
@@ -351,6 +349,149 @@ export default function Rewards() {
                       {milestone.achieved ? "Achieved" : "Locked"}
                     </div>
                   </div>
+                </div>
+              ))}
+            </div>
+          </div>
+        </section> */}
+
+ {/* Community Milestones */}
+        <section className="py-16 px-4 bg-gradient-to-b from-[#0a0a0a] to-[#1a1a2e] relative overflow-hidden">
+          {/* Animated background elements */}
+          <div className="absolute inset-0 opacity-20">
+            <div className="absolute top-1/3 left-1/6 w-40 h-40 bg-[#edc84f] rounded-full blur-3xl animate-pulse"></div>
+            <div className="absolute bottom-1/3 right-1/6 w-32 h-32 bg-[#c79c27] rounded-full blur-2xl animate-pulse delay-1000"></div>
+          </div>
+          
+          <div className="max-w-6xl mx-auto relative z-10">
+            <div className="text-center mb-16">
+              <div className="inline-block p-1 rounded-full bg-gradient-to-r from-[#edc84f] to-[#c79c27] mb-6">
+                <div className="bg-[#1a1a2e] rounded-full px-6 py-2">
+                  <span className="text-sm font-semibold text-[#edc84f] [font-family:'Orbitron',Helvetica]">
+                    COMMUNITY ACHIEVEMENTS
+                  </span>
+                </div>
+              </div>
+              
+              <h2 className="text-4xl [font-family:'Orbitron',Helvetica] font-normal text-center text-white mb-4">
+                Milestone Rewards
+              </h2>
+              <p className="text-lg [font-family:'Oxanium',Helvetica] font-medium text-gray-300 text-center mb-8">
+                Unlock legendary treasures as our community grows stronger
+              </p>
+              
+              {/* Progress overview */}
+              <div className="bg-[#ffffff08] backdrop-blur-md border-[#edc84f40] rounded-2xl p-6 max-w-md mx-auto">
+                <div className="flex items-center justify-between mb-3">
+                  <span className="text-sm text-gray-400 [font-family:'Oxanium',Helvetica]">Community Progress</span>
+                  <span className="text-sm text-[#edc84f] [font-family:'Oxanium',Helvetica] font-semibold">3 / 5 Unlocked</span>
+                </div>
+                <div className="w-full h-2 bg-[#ffffff10] rounded-full overflow-hidden">
+                  <div className="h-full w-3/5 bg-gradient-to-r from-[#edc84f] to-[#c79c27] rounded-full"></div>
+                </div>
+              </div>
+            </div>
+
+            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+              {milestones.map((milestone, index) => (
+                <div
+                  key={index}
+                  className={`relative overflow-hidden rounded-2xl border transition-all duration-500 hover:scale-105 group cursor-pointer ${
+                    milestone.achieved
+                      ? "bg-gradient-to-br from-[#edc84f15] via-[#edc84f08] to-[#c79c2708] border-[#edc84f40] shadow-lg shadow-[#edc84f]/20"
+                      : "bg-gradient-to-br from-[#ffffff08] via-[#ffffff05] to-[#ffffff03] border-[#ffffff15]"
+                  }`}
+                  onClick={() => {
+                    if (milestone.image) {
+                      setPreviewImage(milestone.image);
+                      setPreviewTitle(milestone.reward);
+                    }
+                  }}
+                >
+                  {/* Background Image with Overlay */}
+                  <div className="absolute inset-0 opacity-20 group-hover:opacity-30 transition-opacity duration-300">
+                    <img
+                      src={milestone.image}
+                      alt={milestone.reward}
+                      className="w-full h-full object-cover scale-150 blur-sm"
+                    />
+                  </div>
+
+                  {/* Gradient Overlay */}
+                  <div className="absolute inset-0 bg-gradient-to-t from-black/60 via-transparent to-transparent"></div>
+
+                  {/* Content */}
+                  <div className="relative z-10 p-6 h-full flex flex-col">
+                    {/* Header with Count and Status */}
+                    <div className="flex items-center justify-between mb-4">
+                      <div
+                        className={`w-12 h-12 rounded-full flex items-center justify-center text-lg font-bold [font-family:'Orbitron',Helvetica] ${
+                          milestone.achieved
+                            ? "bg-gradient-to-r from-[#edc84f] to-[#c79c27] text-black"
+                            : "bg-[#ffffff15] text-gray-400"
+                        }`}
+                      >
+                        {milestone.achieved ? "✓" : milestone.count}
+                      </div>
+
+                      <div
+                        className={`px-3 py-1 rounded-full text-xs font-semibold [font-family:'Oxanium',Helvetica] ${
+                          milestone.achieved
+                            ? "bg-green-500/20 text-green-400 border border-green-500/30"
+                            : "bg-gray-500/20 text-gray-400 border border-gray-500/30"
+                        }`}
+                      >
+                        {milestone.achieved ? "Achieved" : "Locked"}
+                      </div>
+                    </div>
+
+                    {/* Central Reward Image */}
+                    <div className="flex-grow flex items-center justify-center mb-4">
+                      <div className="w-20 h-20 rounded-xl bg-[#000000aa] backdrop-blur-sm border border-[#ffffff20] flex items-center justify-center shadow-xl group-hover:scale-110 transition-transform duration-300">
+                        <img
+                          src={milestone.image}
+                          alt={milestone.reward}
+                          className="max-w-[70%] max-h-[70%] object-contain filter drop-shadow-lg"
+                        />
+                      </div>
+                    </div>
+
+                    {/* Title and Description */}
+                    <div className="text-center">
+                      <h3
+                        className={`text-lg [font-family:'Orbitron',Helvetica] font-semibold mb-2 ${
+                          milestone.achieved ? "text-[#edc84f]" : "text-white"
+                        }`}
+                      >
+                        {milestone.count} Goal
+                      </h3>
+
+                      <p className="text-sm text-gray-300 [font-family:'Oxanium',Helvetica] leading-relaxed">
+                        {milestone.reward}
+                      </p>
+                    </div>
+
+                    {/* Progress Indicator */}
+                    <div className="mt-4 pt-3 border-t border-[#ffffff10]">
+                      <div className="w-full h-1 bg-[#ffffff10] rounded-full overflow-hidden">
+                        <div
+                          className={`h-full transition-all duration-1000 ${
+                            milestone.achieved
+                              ? "w-full bg-gradient-to-r from-[#edc84f] to-[#c79c27]"
+                              : "w-0 bg-gray-400"
+                          }`}
+                        ></div>
+                      </div>
+                    </div>
+
+                    {/* Hover Effect Overlay */}
+                    <div className="absolute inset-0 bg-gradient-to-r from-[#edc84f10] to-[#c79c2710] opacity-0 group-hover:opacity-100 transition-opacity duration-300 rounded-2xl"></div>
+                  </div>
+
+                  {/* Glow Effect */}
+                  {milestone.achieved && (
+                    <div className="absolute inset-0 rounded-2xl shadow-lg shadow-[#edc84f]/20 group-hover:shadow-[#edc84f]/40 transition-shadow duration-300"></div>
+                  )}
                 </div>
               ))}
             </div>
@@ -406,7 +547,6 @@ export default function Rewards() {
             </div>
           </div>
         )}
-
         <FooterSection />
       </div>
     </>
