@@ -76,11 +76,11 @@ export default function Home() {
         <HeroSection scrollToPreRegister={scrollToPreRegister} />
         <GameFeaturesSection />
         <TrailerGameplaySection />
-        <FrozenVaultSection />
+        {/* <FrozenVaultSection /> */}
         <ExclusiveRewardsSection />
         <PreRegistrationSection ref={preRegRef} />
         <CountdownTimerSection />
-        <SignalFromTheVoidSection />
+        {/* <SignalFromTheVoidSection /> */}
         <CommunityEngagementSection />
         <StorylineSection />
         <OptionalFeaturesSection />
