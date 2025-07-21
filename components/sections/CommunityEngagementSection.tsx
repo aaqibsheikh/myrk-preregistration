@@ -7,28 +7,40 @@ export const CommunityEngagementSection = (): JSX.Element => {
   const socialIcons = [
     {
       alt: "Discord",
-      src: "/figmaAssets/frame-6.svg",
-      width: "w-[30px]",
-      position: "left-[493px]",
+      src: "https://cdn.jsdelivr.net/npm/simple-icons@v9/icons/discord.svg",
+      link: "https://discord.gg/myrk-game",
+      width: "w-6"
     },
     {
-      alt: "Twitter",
-      src: "/figmaAssets/frame-4.svg",
-      width: "w-6",
-      position: "left-[584px]",
-    },
-    {
-      alt: "Reddit",
-      src: "/figmaAssets/frame-7.svg",
-      width: "w-[21px]",
-      position: "left-[674px]",
+      alt: "X (Twitter)",
+      src: "https://cdn.jsdelivr.net/npm/simple-icons@v9/icons/x.svg",
+      link: "https://x.com/PenguinPWS",
+      width: "w-6"
     },
     {
       alt: "YouTube",
-      src: "/figmaAssets/frame-5.svg",
-      width: "w-[27px]",
-      position: "left-[758px]",
+      src: "https://cdn.jsdelivr.net/npm/simple-icons@v9/icons/youtube.svg",
+      link: "https://www.youtube.com/@penguinpixelworks",
+      width: "w-6"
     },
+    {
+      alt: "Instagram",
+      src: "https://cdn.jsdelivr.net/npm/simple-icons@v9/icons/instagram.svg",
+      link: "https://www.instagram.com/penguinpixelworks/",
+      width: "w-6"
+    },
+    {
+      alt: "Facebook",
+      src: "https://cdn.jsdelivr.net/npm/simple-icons@v9/icons/facebook.svg",
+      link: "https://www.facebook.com/MYRK.EotF",
+      width: "w-6"
+    },
+    {
+      alt: "TikTok",
+      src: "https://cdn.jsdelivr.net/npm/simple-icons@v9/icons/tiktok.svg",
+      link: "https://www.tiktok.com/@myrkechoesoftheforgotten",
+      width: "w-6"
+    }
   ];
 
   return (
@@ -45,13 +57,13 @@ export const CommunityEngagementSection = (): JSX.Element => {
 
           <div className="flex justify-center items-center gap-8 sm:gap-10 md:gap-14 my-4 sm:my-6 flex-wrap">
             {socialIcons.map((icon, index) => (
-              <div key={index} className="flex items-center justify-center h-6 hover:scale-110 transition-all duration-300 cursor-pointer">
+              <a key={index} href={icon.link} target="_blank" rel="noopener noreferrer" className="flex items-center justify-center h-6 hover:scale-110 transition-all duration-300 cursor-pointer">
                 <img
                   className={`relative ${icon.width} h-6 transition-all duration-300`}
                   alt={icon.alt}
                   src={icon.src}
                 />
-              </div>
+              </a>
             ))}
           </div>
 

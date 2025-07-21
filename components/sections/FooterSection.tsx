@@ -5,27 +5,39 @@ export const FooterSection = (): JSX.Element => {
   // Social media icons data with active links
   const socialIcons = [
     {
-      src: "/figmaAssets/frame-4.svg",
+      src: "https://cdn.jsdelivr.net/npm/simple-icons@v9/icons/discord.svg",
       alt: "Discord",
       link: "https://discord.gg/myrk-game",
       width: "w-5"
     },
     {
-      src: "/figmaAssets/frame-10.svg",
-      alt: "Twitter",
-      link: "https://twitter.com/myrk_game",
+      src: "https://cdn.jsdelivr.net/npm/simple-icons@v9/icons/x.svg",
+      alt: "X (Twitter)",
+      link: "https://x.com/PenguinPWS",
       width: "w-5"
     },
     {
-      src: "/figmaAssets/frame-7.svg",
-      alt: "Instagram",
-      link: "https://instagram.com/myrk_game",
-      width: "w-3.5"
+      src: "https://cdn.jsdelivr.net/npm/simple-icons@v9/icons/youtube.svg",
+      alt: "YouTube",
+      link: "https://www.youtube.com/@penguinpixelworks",
+      width: "w-5"
     },
     {
-      src: "/figmaAssets/frame.svg",
-      alt: "YouTube",
-      link: "https://youtube.com/@myrk-game",
+      src: "https://cdn.jsdelivr.net/npm/simple-icons@v9/icons/instagram.svg",
+      alt: "Instagram",
+      link: "https://www.instagram.com/penguinpixelworks/",
+      width: "w-5"
+    },
+    {
+      src: "https://cdn.jsdelivr.net/npm/simple-icons@v9/icons/facebook.svg",
+      alt: "Facebook",
+      link: "https://www.facebook.com/MYRK.EotF",
+      width: "w-5"
+    },
+    {
+      src: "https://cdn.jsdelivr.net/npm/simple-icons@v9/icons/tiktok.svg",
+      alt: "TikTok",
+      link: "https://www.tiktok.com/@myrkechoesoftheforgotten",
       width: "w-5"
     }
   ];

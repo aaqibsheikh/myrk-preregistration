@@ -76,20 +76,25 @@ type HeaderSectionProps = {
 
         {/* Social Media Icons */}
         <div className="hidden md:flex items-center space-x-3 mr-4">
-          <a href="https://facebook.com/myrk-game" target="_blank" rel="noopener noreferrer" className="text-gray-400 hover:text-[#edc84f] transition-colors duration-300">
-            <Facebook size={20} />
-          </a>
-          <a href="https://twitter.com/myrk-game" target="_blank" rel="noopener noreferrer" className="text-gray-400 hover:text-[#edc84f] transition-colors duration-300">
-            <Twitter size={20} />
-          </a>
-          <a href="https://instagram.com/myrk-game" target="_blank" rel="noopener noreferrer" className="text-gray-400 hover:text-[#edc84f] transition-colors duration-300">
-            <Instagram size={20} />
-          </a>
-          <a href="https://youtube.com/myrk-game" target="_blank" rel="noopener noreferrer" className="text-gray-400 hover:text-[#edc84f] transition-colors duration-300">
-            <Youtube size={20} />
-          </a>
           <a href="https://discord.gg/myrk-game" target="_blank" rel="noopener noreferrer" className="text-gray-400 hover:text-[#edc84f] transition-colors duration-300">
             <MessageCircle size={20} />
+          </a>
+          <a href="https://x.com/PenguinPWS" target="_blank" rel="noopener noreferrer" className="text-gray-400 hover:text-[#edc84f] transition-colors duration-300">
+            <svg viewBox="0 0 1200 1227" fill="none" xmlns="http://www.w3.org/2000/svg" className="w-4 h-4" style={{ display: 'block' }}>
+              <path d="M714.163 519.284L1160.89 0H1055.03L667.137 450.887L357.328 0H0L468.492 681.821L0 1226.37H105.866L515.491 750.218L842.672 1226.37H1200L714.137 519.284H714.163ZM569.165 687.828L521.697 619.934L144.011 79.6944H306.615L611.412 515.685L658.88 583.579L1055.08 1150.3H892.476L569.165 687.854V687.828Z" fill="white"/>
+            </svg>
+          </a>
+          <a href="https://www.youtube.com/@penguinpixelworks" target="_blank" rel="noopener noreferrer" className="text-gray-400 hover:text-[#edc84f] transition-colors duration-300">
+            <Youtube size={20} />
+          </a>
+          <a href="https://www.instagram.com/penguinpixelworks/" target="_blank" rel="noopener noreferrer" className="text-gray-400 hover:text-[#edc84f] transition-colors duration-300">
+            <Instagram size={20} />
+          </a>
+          <a href="https://www.facebook.com/MYRK.EotF" target="_blank" rel="noopener noreferrer" className="text-gray-400 hover:text-[#edc84f] transition-colors duration-300">
+            <img src="https://cdn.jsdelivr.net/npm/simple-icons@v9/icons/facebook.svg" alt="Facebook" className="w-5 h-5" />
+          </a>
+          <a href="https://www.tiktok.com/@myrkechoesoftheforgotten" target="_blank" rel="noopener noreferrer" className="text-gray-400 hover:text-[#edc84f] transition-colors duration-300">
+            <img src="https://cdn.jsdelivr.net/npm/simple-icons@v9/icons/tiktok.svg" alt="TikTok" className="w-5 h-5" />
           </a>
         </div>
 
