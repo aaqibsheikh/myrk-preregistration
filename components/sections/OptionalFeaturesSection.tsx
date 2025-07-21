@@ -6,23 +6,23 @@ export const OptionalFeaturesSection = (): JSX.Element => {
   // Data for creator cards
   const creators = [
     {
-      name: "Alex Chen",
-      role: "Game Director",
-      description: ["15+ years crafting immersive", "gaming experiences"],
-      image: "/figmaAssets/image-1.png",
+      name: "Tetsu Dao",
+      role: "Senior Game Developer",
+      // description: ["15+ years crafting immersive", "gaming experiences"],
+      image: "/figmaAssets/testu.jpg",
     },
     {
-      name: "Sarah Kim",
-      role: "Art Director",
-      description: ["Award-winning artist behind", "MYRK's visual world"],
-      image: "/figmaAssets/image.png",
+      name: "Rubik",
+      role: "A Game Studio Outsourcing",
+      // description: ["Award-winning artist behind", "MYRK's visual world"],
+      image: "/figmaAssets/rubik.png",
     },
-    {
-      name: "Marcus Rodriguez",
-      role: "Technical Director",
-      description: ["Engine architect pushing gaming", "boundaries"],
-      image: "/figmaAssets/image-2.png",
-    },
+    // {
+    //   name: "Marcus Rodriguez",
+    //   role: "Technical Director",
+    //   description: ["Engine architect pushing gaming", "boundaries"],
+    //   image: "/figmaAssets/image-2.png",
+    // },
   ];
 
   return (
@@ -49,7 +49,7 @@ export const OptionalFeaturesSection = (): JSX.Element => {
                   </Avatar>
                 </div>
 
-                <div className="w-full max-w-[227px] text-center">
+                <div className="w-full max-w-[227px] text-center sm:mt-[15px]">
                   <h3 className="text-lg sm:text-xl text-white font-normal [font-family:'Oxanium',Helvetica] leading-normal transition-all duration-300 group-hover:text-[#edc84f]">
                     {creator.name}
                   </h3>
@@ -61,7 +61,7 @@ export const OptionalFeaturesSection = (): JSX.Element => {
                   </p>
                 </div>
 
-                <div className="w-full max-w-[227px] text-center mt-2 sm:mt-[15px]">
+                {/* <div className="w-full max-w-[227px] text-center mt-2 sm:mt-[15px]">
                   {creator.description.map((line, i) => (
                     <p
                       key={i}
@@ -70,7 +70,7 @@ export const OptionalFeaturesSection = (): JSX.Element => {
                       {line}
                     </p>
                   ))}
-                </div>
+                </div> */}
               </CardContent>
             </Card>
           ))}

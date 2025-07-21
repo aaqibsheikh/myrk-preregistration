@@ -67,10 +67,43 @@ export const PreRegistrationSection = forwardRef<HTMLDivElement>((props, ref) =>
         registeredAt: new Date().toISOString()
       });
       
-      toast({
-        title: "Pre-registration successful!",
-        description: "Welcome to the MYRK community! You'll receive updates about the launch.",
-      });
+      // toast({
+      //   title: "Pre-registration successful!",
+      //   description: "Welcome to the MYRK community! You'll receive updates about the launch.",
+      // });
+
+      // Send confirmation email
+      try {
+        const emailResponse = await fetch('/api/send-email', {
+          method: 'POST',
+          headers: {
+            'Content-Type': 'application/json',
+          },
+          body: JSON.stringify({
+            fullName: formData.fullName,
+            email: formData.email,
+            platform: formData.platform
+          })
+        });
+        
+        if (emailResponse.ok) {
+          toast({
+            title: "Pre-registration successful!",
+            description: "Welcome to the MYRK community! Check your email for confirmation and exclusive rewards.",
+          });
+        } else {
+          toast({
+            title: "Registration saved!",
+            description: "Your pre-registration was successful, but we couldn't send the confirmation email. You'll still receive updates about the launch.",
+          });
+        }
+      } catch (emailError) {
+        console.error("Email sending failed:", emailError);
+        toast({
+          title: "Registration saved!",
+          description: "Your pre-registration was successful, but we couldn't send the confirmation email. You'll still receive updates about the launch.",
+        });
+      }
       
       // Reset form
       setFormData({
