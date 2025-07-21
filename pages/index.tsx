@@ -85,7 +85,7 @@ export default function Home() {
         <StorylineSection />
         <OptionalFeaturesSection />
         <FooterSection />
-        <FloatingChatbot />
+        {/* <FloatingChatbot /> */}
       </div>
     </>
   );
