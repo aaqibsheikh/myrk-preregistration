@@ -8,62 +8,45 @@ import { FooterSection } from "../components/sections/FooterSection";
 export default function Rewards() {
   const [previewImage, setPreviewImage] = useState<string | null>(null);
   const [previewTitle, setPreviewTitle] = useState<string | null>(null);
- const exclusiveRewards = [
+  const exclusiveRewards = [
     {
-      title: "Legendary Weapon Pack",
+      title: "Gold Starter Pack",
       description:
-        "Exclusive mythical weapons only available to pre-registered players",
+        "Begin your journey with 2,500 Gold—perfect for upgrades, crafting, and essential gear.",
       icon: "/figmaAssets/frame-4.svg",
-      rarity: "Legendary",
-      value: "$29.99 Value",
-      unlocked: "Launch Day"
+      rarity: "Premium",
+      value: "$4.99 Value",
+      unlocked: "Account Creation"
     },
     {
-      title: "Ancient Armor Set",
+      title: "Gem Bundle",
       description:
-        "Complete armor collection with mystical enchantments and unique appearance",
+        "Receive 200 Gems to summon companions, unlock boosts, and power up your adventure.",
       icon: "/figmaAssets/frame-3.svg",
-      rarity: "Epic",
-      value: "$19.99 Value",
-      unlocked: "Pre-Registration"
+      rarity: "Premium",
+      value: "$9.99 Value",
+      unlocked: "Account Creation"
     },
     {
-      title: "Celestial Mount",
+      title: "Founder's Achievement",
       description:
-        "Soar through the skies on this majestic creature with ethereal wings",
-      icon: "/figmaAssets/frame-5.svg",
-      rarity: "Mythic",
-      value: "$39.99 Value",
-      unlocked: "Beta Access"
-    },
-    {
-      title: "Founder's Title",
-      description:
-        "Display your status as an original MYRK adventurer with this prestigious title",
+        "A one-of-a-kind title and badge commemorating your place as an original MYRK adventurer.",
       icon: "/figmaAssets/frame-6.svg",
       rarity: "Unique",
       value: "Priceless",
       unlocked: "Early Access"
     },
     {
-      title: "Premium Currency",
+      title: "Echo Feast Pack",
       description:
-        "1000 Myrk Crystals to enhance your gameplay experience from day one",
+        "50 rare meats to help level up your Echo companions—obtainable only through victory in battle.",
       icon: "/figmaAssets/frame-7.svg",
-      rarity: "Premium",
-      value: "$9.99 Value",
-      unlocked: "Account Creation"
-    },
-    {
-      title: "Exclusive Emotes",
-      description:
-        "Special celebration animations and gestures unique to pre-registered players",
-      icon: "/figmaAssets/frame-2.svg",
-      rarity: "Rare",
-      value: "$14.99 Value",
-      unlocked: "Community Goal"
+      rarity: "Legendary",
+      value: "Exclusive",
+      unlocked: "Launch Day"
     }
   ];
+  
 
   // const milestones = [
   //   { count: "10K", reward: "Exclusive Weapon Gearfang Talon", achieved: true },

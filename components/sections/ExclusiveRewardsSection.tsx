@@ -3,28 +3,68 @@ import { Card, CardContent } from "@/components/ui/card";
 
 export const ExclusiveRewardsSection = (): JSX.Element => {
   // Define reward cards data for mapping
+
   const rewardCards = [
     {
-      icon: "/figmaAssets/frame-8.svg",
-      title: "1000 Gold Coins",
-      description: "Premium currency to enhance your journey",
+      title: "Gold Starter Pack",
+      description:
+        "Begin your journey with 2,500 Gold—perfect for upgrades, crafting, and essential gear.",
+      icon: "/figmaAssets/frame-4.svg",
+      rarity: "Premium",
+      value: "$4.99 Value",
+      unlocked: "Account Creation"
     },
     {
-      icon: "/figmaAssets/frame-13.svg",
-      title: "Mystic Blade",
-      description: "Legendary weapon exclusive to early players",
-    },
-    {
-      icon: "/figmaAssets/frame-9.svg",
-      title: "Elite Armor Set",
-      description: "Unique cosmetic armor with special effects",
-    },
-    {
+      title: "Gem Bundle",
+      description:
+        "Receive 200 Gems to summon companions, unlock boosts, and power up your adventure.",
       icon: "/figmaAssets/frame-3.svg",
-      title: "VIP Status",
-      description: "7-day early access and exclusive benefits",
+      rarity: "Premium",
+      value: "$9.99 Value",
+      unlocked: "Account Creation"
     },
+    {
+      title: "Founder's Achievement",
+      description:
+        "A one-of-a-kind title and badge commemorating your place as an original MYRK adventurer.",
+      icon: "/figmaAssets/frame-6.svg",
+      rarity: "Unique",
+      value: "Priceless",
+      unlocked: "Early Access"
+    },
+    {
+      title: "Echo Feast Pack",
+      description:
+        "50 rare meats to help level up your Echo companions—obtainable only through victory in battle.",
+      icon: "/figmaAssets/frame-7.svg",
+      rarity: "Legendary",
+      value: "Exclusive",
+      unlocked: "Launch Day"
+    }
   ];
+
+  // const rewardCards = [
+  //   {
+  //     icon: "/figmaAssets/frame-8.svg",
+  //     title: "1000 Gold Coins",
+  //     description: "Premium currency to enhance your journey",
+  //   },
+  //   {
+  //     icon: "/figmaAssets/frame-13.svg",
+  //     title: "Mystic Blade",
+  //     description: "Legendary weapon exclusive to early players",
+  //   },
+  //   {
+  //     icon: "/figmaAssets/frame-9.svg",
+  //     title: "Elite Armor Set",
+  //     description: "Unique cosmetic armor with special effects",
+  //   },
+  //   {
+  //     icon: "/figmaAssets/frame-3.svg",
+  //     title: "VIP Status",
+  //     description: "7-day early access and exclusive benefits",
+  //   },
+  // ];
 
   return (
     <section className="w-full py-12 sm:py-16 md:py-20 transition-all duration-300">
