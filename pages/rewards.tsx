@@ -13,7 +13,7 @@ export default function Rewards() {
       title: "Gold Starter Pack",
       description:
         "Begin your journey with 2,500 Gold—perfect for upgrades, crafting, and essential gear.",
-      icon: "/figmaAssets/frame-4.svg",
+      icon: "/rewards/myrk-gold-coin.png",
       rarity: "Premium",
       value: "$4.99 Value",
       unlocked: "Account Creation"
@@ -22,7 +22,7 @@ export default function Rewards() {
       title: "Gem Bundle",
       description:
         "Receive 200 Gems to summon companions, unlock boosts, and power up your adventure.",
-      icon: "/figmaAssets/frame-3.svg",
+      icon: "/rewards/gem.png",
       rarity: "Premium",
       value: "$9.99 Value",
       unlocked: "Account Creation"
@@ -31,7 +31,7 @@ export default function Rewards() {
       title: "Founder's Achievement",
       description:
         "A one-of-a-kind title and badge commemorating your place as an original MYRK adventurer.",
-      icon: "/figmaAssets/frame-6.svg",
+      icon: "/rewards/founder.png",
       rarity: "Unique",
       value: "Priceless",
       unlocked: "Early Access"
@@ -40,7 +40,7 @@ export default function Rewards() {
       title: "Echo Feast Pack",
       description:
         "50 rare meats to help level up your Echo companions—obtainable only through victory in battle.",
-      icon: "/figmaAssets/frame-7.svg",
+      icon: "/rewards/meat.png",
       rarity: "Legendary",
       value: "Exclusive",
       unlocked: "Launch Day"
@@ -207,17 +207,17 @@ export default function Rewards() {
                 >
                   <CardContent className="p-6 h-full flex flex-col relative">
                     {/* Rarity Badge */}
-                    <div
+                    {/* <div
                       className={`absolute top-4 right-4 px-3 py-1 rounded-full text-xs font-semibold text-white bg-gradient-to-r ${getRarityColor(
                         reward.rarity
                       )}`}
                     >
                       {reward.rarity}
-                    </div>
+                    </div> */}
 
-                    <div className="w-16 h-16 rounded-xl bg-[linear-gradient(180deg,rgba(237,200,79,1)_0%,rgba(199,156,39,1)_100%)] flex items-center justify-center mb-6 transition-all duration-300 group-hover:scale-110 group-hover:shadow-lg group-hover:shadow-[#edc84f]/50">
+                    <div className="w-16 h-16 rounded-xl flex items-center justify-center mb-6 transition-all duration-300 group-hover:scale-110 group-hover:shadow-lg ">
                       <img
-                        className="w-6 h-6 transition-all duration-300 group-hover:brightness-110"
+                        className="w-16 h-16 transition-all duration-300 group-hover:brightness-110"
                         alt={reward.title}
                         src={reward.icon}
                       />

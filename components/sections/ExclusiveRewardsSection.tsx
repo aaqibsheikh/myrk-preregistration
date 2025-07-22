@@ -9,7 +9,7 @@ export const ExclusiveRewardsSection = (): JSX.Element => {
       title: "Gold Starter Pack",
       description:
         "Begin your journey with 2,500 Gold—perfect for upgrades, crafting, and essential gear.",
-      icon: "/figmaAssets/frame-4.svg",
+      icon: "/rewards/myrk-gold-coin.png",
       rarity: "Premium",
       value: "$4.99 Value",
       unlocked: "Account Creation"
@@ -18,7 +18,7 @@ export const ExclusiveRewardsSection = (): JSX.Element => {
       title: "Gem Bundle",
       description:
         "Receive 200 Gems to summon companions, unlock boosts, and power up your adventure.",
-      icon: "/figmaAssets/frame-3.svg",
+      icon: "/rewards/gem.png",
       rarity: "Premium",
       value: "$9.99 Value",
       unlocked: "Account Creation"
@@ -27,7 +27,7 @@ export const ExclusiveRewardsSection = (): JSX.Element => {
       title: "Founder's Achievement",
       description:
         "A one-of-a-kind title and badge commemorating your place as an original MYRK adventurer.",
-      icon: "/figmaAssets/frame-6.svg",
+      icon: "/rewards/founder.png",
       rarity: "Unique",
       value: "Priceless",
       unlocked: "Early Access"
@@ -36,7 +36,7 @@ export const ExclusiveRewardsSection = (): JSX.Element => {
       title: "Echo Feast Pack",
       description:
         "50 rare meats to help level up your Echo companions—obtainable only through victory in battle.",
-      icon: "/figmaAssets/frame-7.svg",
+      icon: "/rewards/meat.png",
       rarity: "Legendary",
       value: "Exclusive",
       unlocked: "Launch Day"
@@ -87,9 +87,9 @@ export const ExclusiveRewardsSection = (): JSX.Element => {
               className="rounded-2xl border-none bg-[linear-gradient(180deg,rgba(237,200,79,0.3)_0%,rgba(199,156,39,0.3)_100%)] hover:bg-[linear-gradient(180deg,rgba(237,200,79,0.4)_0%,rgba(199,156,39,0.4)_100%)] transition-all duration-300 hover:scale-105 hover:shadow-lg hover:shadow-[#edc84f]/20 group"
             >
               <CardContent className="flex flex-col items-center pt-6 pb-6 sm:pb-8 px-4">
-                <div className="flex items-center justify-center w-8 sm:w-9 h-8 sm:h-9 mb-3 sm:mb-4 transition-all duration-300 group-hover:scale-110">
+                <div className="flex items-center justify-center w-8 sm:w-14 h-8 sm:h-14 mb-3 sm:mb-4 transition-all duration-300 group-hover:scale-110">
                   <img
-                    className="w-8 sm:w-9 h-8 sm:h-9 transition-all duration-300"
+                    className="w-8 sm:w-14 h-8 sm:h-14 transition-all duration-300"
                     alt={`${card.title} icon`}
                     src={card.icon}
                   />
