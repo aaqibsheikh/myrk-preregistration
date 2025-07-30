@@ -224,9 +224,9 @@ export default function Community() {
                     </p>
 
                     <div className="flex justify-between items-center">
-                      <span className="text-[#edc84f] [font-family:'Oxanium',Helvetica] font-semibold">
+                      {/* <span className="text-[#edc84f] [font-family:'Oxanium',Helvetica] font-semibold">
                         {platform.members}
-                      </span>
+                      </span> */}
                       <Button className="text-xs px-3 py-1 h-auto bg-gradient-to-r from-[#edc84f] to-[#c79c27] text-black hover:scale-105 transition-all duration-300">
                         Join Now
                       </Button>
