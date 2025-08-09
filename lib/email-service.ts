@@ -1,16 +1,16 @@
-import sgMail from '@sendgrid/mail';
-import { generateFigmaBasedEmailTemplate } from './email-template-figma';
+import * as sgMail from '@sendgrid/mail';
+import { generateSimpleEmailTemplate } from './email-template';
 
-if (!process.env.SENDGRID_API_KEY) {
-  throw new Error("SENDGRID_API_KEY environment variable must be set");
+if (!process.env.NEXT_PUBLIC_SENDGRID_API_KEY) {
+  throw new Error("NEXT_PUBLIC_SENDGRID_API_KEY environment variable must be set");
 }
 
-sgMail.setApiKey(process.env.SENDGRID_API_KEY);
+sgMail.setApiKey(process.env.NEXT_PUBLIC_SENDGRID_API_KEY);
 
 export interface PreRegistrationEmailData {
   fullName: string;
   email: string;
-  platform: string;
+  platform?: string; // Made optional since dropdown is hidden
   registrationDate: string;
 }
 
@@ -18,7 +18,7 @@ export async function sendPreRegistrationEmail(
   userData: PreRegistrationEmailData
 ): Promise<boolean> {
   try {
-    const htmlContent = generateFigmaBasedEmailTemplate(userData);
+    const htmlContent = generateSimpleEmailTemplate(userData);
     
     const msg = {
       to: userData.email,
@@ -28,7 +28,7 @@ export async function sendPreRegistrationEmail(
       },
       subject: '🎮 Welcome to MYRK: Echoes of the Forgotten!',
       html: htmlContent,
-      text: `Welcome to MYRK, ${userData.fullName}! Your pre-registration has been confirmed for ${userData.platform}. Prepare to awaken as a forgotten hero in a world torn by elemental chaos!`
+      text: `Welcome to MYRK, ${userData.fullName}! Your pre-registration has been confirmed. Prepare to awaken as a forgotten hero in a world torn by elemental chaos!`
     };
 
     await sgMail.send(msg);

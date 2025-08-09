@@ -9,10 +9,10 @@ export default async function handler(req: NextApiRequest, res: NextApiResponse)
   try {
     const { fullName, email, platform } = req.body;
 
-    // Validate required fields
-    if (!fullName || !email || !platform) {
+    // Validate required fields (platform is now optional)
+    if (!fullName || !email) {
       return res.status(400).json({ 
-        message: 'Missing required fields: fullName, email, platform' 
+        message: 'Missing required fields: fullName, email' 
       });
     }
 
@@ -28,7 +28,7 @@ export default async function handler(req: NextApiRequest, res: NextApiResponse)
     const emailData: PreRegistrationEmailData = {
       fullName,
       email,
-      platform,
+      platform: platform || 'Not specified', // Default value if platform is not provided
       registrationDate: new Date().toLocaleDateString('en-US', {
         year: 'numeric',
         month: 'long',

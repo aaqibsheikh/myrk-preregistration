@@ -3,6 +3,7 @@ const nextConfig = {
   reactStrictMode: true,
   poweredByHeader: false,
   compress: true,
+  // Removed output: 'export' to enable API routes
   
   // Performance optimizations for Replit environment
   experimental: {
