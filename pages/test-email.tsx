@@ -23,7 +23,7 @@ export default function TestEmail() {
     setIsLoading(true);
     
     try {
-      const response = await fetch('/api/test-email', {
+      const response = await fetch('https://myrk-email-backend.herokuapp.com/api/send-test-email', {
         method: 'POST',
         headers: {
           'Content-Type': 'application/json',

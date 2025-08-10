@@ -133,9 +133,11 @@ export const PreRegistrationSection = forwardRef<HTMLDivElement>((props, ref) =>
         email: normalizeEmail(formData.email) // Use normalized email
       });
       
-      // Send confirmation email
+      // Send confirmation email via external backend
       try {
-        const emailResponse = await fetch('/api/send-email', {
+        // http://localhost:3001
+        // https://myrk-email-backend-49eba24ba6b6.herokuapp.com
+        const emailResponse = await fetch('https://myrk-email-backend-49eba24ba6b6.herokuapp.com/api/send-preregistration-email', {
           method: 'POST',
           headers: {
             'Content-Type': 'application/json',

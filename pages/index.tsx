@@ -81,7 +81,7 @@ export default function Home() {
         <PreRegistrationSection ref={preRegRef} />
         <CountdownTimerSection />
         {/* <SignalFromTheVoidSection /> */}
-        <CommunityEngagementSection />
+        {/* <CommunityEngagementSection /> */}
         <StorylineSection />
         <OptionalFeaturesSection />
         <FooterSection />

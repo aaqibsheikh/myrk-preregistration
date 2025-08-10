@@ -6,16 +6,25 @@ export const OptionalFeaturesSection = (): JSX.Element => {
   // Data for creator cards
   const creators = [
     {
-      name: "Tetsu Dao",
-      role: "Senior Game Developer",
-      // description: ["15+ years crafting immersive", "gaming experiences"],
-      image: "/figmaAssets/testu.jpg",
+      name: "Penguin Pixelworks",
+      role: "Lead Publisher & Strategic Partner",
+      // description: ["Strategic partner bringing", "MYRK to global audiences"],
+      image: "/figmaAssets/publisher.png",
+      link: "https://penguinpixelworks.com/",
     },
     {
       name: "Rubik",
       role: "A Game Studio Outsourcing",
       // description: ["Award-winning artist behind", "MYRK's visual world"],
       image: "/figmaAssets/rubik.png",
+      link: "",
+    },
+    {
+      name: "Tetsu Dao",
+      role: "Senior Game Developer",
+      // description: ["15+ years crafting immersive", "gaming experiences"],
+      image: "/figmaAssets/testu.jpg",
+      link: "",
     },
     // {
     //   name: "Marcus Rodriguez",
@@ -36,7 +45,14 @@ export const OptionalFeaturesSection = (): JSX.Element => {
           {creators.map((creator, index) => (
             <Card
               key={index}
-              className="w-full max-w-[277px] sm:w-[240px] md:w-[277px] h-auto min-h-[230px] sm:min-h-[240px] md:h-[254px] bg-[#ffffff0d] rounded-2xl border border-solid border-[#ffffff1a] hover:bg-[#ffffff12] hover:border-[#ffffff2a] hover:scale-105 transition-all duration-300 group"
+              className={`w-full max-w-[277px] sm:w-[240px] md:w-[277px] h-auto min-h-[230px] sm:min-h-[240px] md:h-[254px] bg-[#ffffff0d] rounded-2xl border border-solid border-[#ffffff1a] hover:bg-[#ffffff12] hover:border-[#ffffff2a] hover:scale-105 transition-all duration-300 group ${
+                creator.link ? 'cursor-pointer' : ''
+              }`}
+              onClick={() => {
+                if (creator.link) {
+                  window.open(creator.link, '_blank', 'noopener,noreferrer');
+                }
+              }}
             >
               <CardContent className="p-4 sm:p-0 flex flex-col items-center">
                 <div className="mt-3 sm:mt-[15px] mb-2 sm:mb-[6px]">

@@ -1,6 +1,5 @@
 node_modules
 .env.local
-yarn.lock
 package-lock.json
 .next
 dist
@@ -9,21 +8,12 @@ server/public
 vite.config.ts.*
 *.tar.gz
 out/
-# Firebase configuration files
-firebase.json
-firestore.rules
-firestore.indexes.json
-.firebaserc
-
 # Environment files
 .env
 .env.production
 .env.development
 .env.local
 .env.*.local
-
-# Firebase setup documentation
-FIREBASE_SETUP.md
 
 # Logs
 *.log
