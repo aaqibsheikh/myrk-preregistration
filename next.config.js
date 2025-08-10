@@ -3,20 +3,17 @@ const nextConfig = {
   reactStrictMode: true,
   poweredByHeader: false,
   compress: true,
-  // Removed output: 'export' to enable API routes
+  output: 'export', // Enable static export
+  trailingSlash: true, // Add trailing slash for better compatibility
+  images: {
+    unoptimized: true, // Required for static export
+  },
   
   // Performance optimizations for Replit environment
   experimental: {
     // optimizeCss: true, // Disabled due to missing critters dependency
     workerThreads: false, // Disable worker threads to reduce resource usage
     cpus: 1, // Limit to single CPU core
-  },
-  
-  // Image optimization
-  images: {
-    domains: ['localhost', 'cdn.jsdelivr.net'],
-    formats: ['image/webp', 'image/avif'],
-    minimumCacheTTL: 60,
   },
   
   // Headers for better performance
