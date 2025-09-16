@@ -13,7 +13,7 @@ export default function Community() {
         "Join our vibrant Discord community for real-time discussions, events, and exclusive content.",
       members: "50K+ Members",
       icon: "https://cdn.jsdelivr.net/npm/simple-icons@v9/icons/discord.svg",
-      link: "https://discord.gg/myrk-game",
+      link: "https://discord.gg/RjkvPyrT9m",
       color: "from-[#5865f2] to-[#4752c4]"
     },
     {

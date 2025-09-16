@@ -8,7 +8,7 @@ export const CommunityEngagementSection = (): JSX.Element => {
     {
       alt: "Discord",
       src: "https://cdn.jsdelivr.net/npm/simple-icons@v9/icons/discord.svg",
-      link: "https://discord.gg/myrk-game",
+      link: "https://discord.gg/RjkvPyrT9m",
       width: "w-6"
     },
     {

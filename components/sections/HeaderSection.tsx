@@ -76,7 +76,7 @@ type HeaderSectionProps = {
 
         {/* Social Media Icons */}
         <div className="hidden md:flex items-center space-x-3 mr-4">
-          <a href="https://discord.gg/myrk-game" target="_blank" rel="noopener noreferrer" className="text-gray-400 hover:text-[#edc84f] transition-colors duration-300">
+          <a href="https://discord.gg/RjkvPyrT9m" target="_blank" rel="noopener noreferrer" className="text-gray-400 hover:text-[#edc84f] transition-colors duration-300">
             <MessageCircle size={20} />
           </a>
           <a href="https://x.com/PenguinPWS" target="_blank" rel="noopener noreferrer" className="text-gray-400 hover:text-[#edc84f] transition-colors duration-300">

@@ -7,7 +7,7 @@ export const FooterSection = (): JSX.Element => {
     {
       src: "https://cdn.jsdelivr.net/npm/simple-icons@v9/icons/discord.svg",
       alt: "Discord",
-      link: "https://discord.gg/myrk-game",
+      link: "https://discord.gg/RjkvPyrT9m",
       width: "w-5"
     },
     {
