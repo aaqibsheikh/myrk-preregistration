@@ -13,7 +13,7 @@ interface SuccessModalProps {
 export const SuccessModal: React.FC<SuccessModalProps> = ({ 
   isOpen, 
   onClose, 
-  title = "Pre-registration Successful!",
+  title = "Registration Successful!",
   message = "Welcome to the MYRK community! You'll receive exclusive updates and early access information.",
   userName
 }) => {

@@ -122,26 +122,26 @@ export default function Rewards() {
     <>
       <Head>
         <title>
-          MYRK Rewards - Exclusive Pre-Registration Benefits & Items
+          MYRK Rewards - Exclusive Registration Benefits & Items
         </title>
         <meta
           name="description"
-          content="Unlock exclusive MYRK rewards through pre-registration including legendary weapons, rare items, early access benefits, and special in-game content."
+          content="Unlock exclusive MYRK rewards through registration including legendary weapons, rare items, early access benefits, and special in-game content."
         />
         <meta
           name="keywords"
-          content="MYRK rewards, pre-registration benefits, exclusive items, legendary weapons, early access, in-game rewards"
+          content="MYRK rewards, registration benefits, exclusive items, legendary weapons, early access, in-game rewards"
         />
         <meta name="viewport" content="width=device-width, initial-scale=1" />
 
         {/* Open Graph tags */}
         <meta
           property="og:title"
-          content="MYRK Rewards - Exclusive Pre-Registration Benefits & Items"
+          content="MYRK Rewards - Exclusive Registration Benefits & Items"
         />
         <meta
           property="og:description"
-          content="Unlock exclusive MYRK rewards through pre-registration including legendary weapons, rare items, early access benefits, and special in-game content."
+          content="Unlock exclusive MYRK rewards through registration including legendary weapons, rare items, early access benefits, and special in-game content."
         />
         <meta property="og:type" content="website" />
         <meta property="og:url" content="https://myrk-game.com/rewards" />
@@ -154,11 +154,11 @@ export default function Rewards() {
         <meta name="twitter:card" content="summary_large_image" />
         <meta
           name="twitter:title"
-          content="MYRK Rewards - Exclusive Pre-Registration Benefits & Items"
+          content="MYRK Rewards - Exclusive Registration Benefits & Items"
         />
         <meta
           name="twitter:description"
-          content="Unlock exclusive MYRK rewards through pre-registration including legendary weapons, rare items, early access benefits, and special in-game content."
+          content="Unlock exclusive MYRK rewards through registration including legendary weapons, rare items, early access benefits, and special in-game content."
         />
         <meta
           name="twitter:image"
@@ -294,7 +294,7 @@ export default function Rewards() {
                             milestone.achieved ? "text-[#edc84f]" : "text-white"
                           }`}
                         >
-                          {milestone.count} Pre-Registrations
+                          {milestone.count} Registrations
                         </h3>
 
                         <p className="text-sm text-gray-300 [font-family:'Oxanium',Helvetica]">

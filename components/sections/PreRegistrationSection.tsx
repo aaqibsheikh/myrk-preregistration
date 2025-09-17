@@ -299,7 +299,7 @@ export const PreRegistrationSection = forwardRef<HTMLDivElement>((props, ref) =>
                   disabled={isSubmitting || !formData.agreeToUpdates}
                   className="w-full h-[50px] sm:h-[60px] rounded-lg bg-[linear-gradient(180deg,rgba(237,200,79,1)_0%,rgba(199,156,39,1)_100%)] [font-family:'Oxanium',Helvetica] font-normal text-black text-base sm:text-lg hover:scale-105 hover:shadow-lg transition-all duration-300 disabled:opacity-50 disabled:cursor-not-allowed disabled:transform-none"
                 >
-                  {isSubmitting ? "Registering..." : "Complete Pre-Registration"}
+                  {isSubmitting ? "Registering..." : "Complete Registration"}
                 </Button>
               </form>
             </CardContent>
@@ -333,7 +333,7 @@ export const PreRegistrationSection = forwardRef<HTMLDivElement>((props, ref) =>
         isOpen={showSuccessModal}
         onClose={() => setShowSuccessModal(false)}
         userName={successUserName}
-        title="Pre-registration Successful!"
+        title="Registration Successful!"
         message="Welcome to the MYRK community! You'll receive exclusive updates and early access information. Check your email for confirmation and exclusive rewards."
       />
     </>

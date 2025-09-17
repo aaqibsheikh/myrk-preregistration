@@ -257,7 +257,7 @@ export const HeroSection = ({ scrollToPreRegister }: HeroSectionProps): JSX.Elem
         </div>
       </section>
 
-      {/* Pre-registration Modal */}
+      {/* registration Modal */}
       <PreRegistrationModal 
         isOpen={isModalOpen} 
         onClose={() => setIsModalOpen(false)} 
