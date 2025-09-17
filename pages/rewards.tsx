@@ -370,7 +370,7 @@ export default function Rewards() {
                   <span className="text-sm text-[#edc84f] [font-family:'Oxanium',Helvetica] font-semibold">0 / 5 Unlocked</span>
                 </div>
                 <div className="w-full h-2 bg-[#ffffff10] rounded-full overflow-hidden">
-                  <div className="h-full w-3/5 bg-gradient-to-r from-[#edc84f] to-[#c79c27] rounded-full"></div>
+                  {/* <div className="h-full w-3/5 bg-gradient-to-r from-[#edc84f] to-[#c79c27] rounded-full"></div> */}
                 </div>
               </div>
             </div>
