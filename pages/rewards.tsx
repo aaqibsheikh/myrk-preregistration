@@ -64,19 +64,19 @@ export default function Rewards() {
     {
       count: "10K",
       reward: "Exclusive Weapon Gearfang Talon",
-      achieved: true,
+      achieved: false,
       image: "/rewards/gearfang-talon.png"
     },
     {
       count: "25K",
       reward: "Exclusive Armor MagTech Aegis",
-      achieved: true,
+      achieved: false,
       image: "/rewards/magtech-aegis.png"
     },
     {
       count: "50K",
       reward: "Exclusive Helm Shockspire Crown",
-      achieved: true,
+      achieved: false,
       image: "/rewards/shockspire-crown.png"
     },
     {
@@ -367,7 +367,7 @@ export default function Rewards() {
               <div className="bg-[#ffffff08] backdrop-blur-md border-[#edc84f40] rounded-2xl p-6 max-w-md mx-auto">
                 <div className="flex items-center justify-between mb-3">
                   <span className="text-sm text-gray-400 [font-family:'Oxanium',Helvetica]">Community Progress</span>
-                  <span className="text-sm text-[#edc84f] [font-family:'Oxanium',Helvetica] font-semibold">3 / 5 Unlocked</span>
+                  <span className="text-sm text-[#edc84f] [font-family:'Oxanium',Helvetica] font-semibold">0 / 5 Unlocked</span>
                 </div>
                 <div className="w-full h-2 bg-[#ffffff10] rounded-full overflow-hidden">
                   <div className="h-full w-3/5 bg-gradient-to-r from-[#edc84f] to-[#c79c27] rounded-full"></div>
