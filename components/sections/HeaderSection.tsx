@@ -98,10 +98,10 @@ type HeaderSectionProps = {
           </a>
         </div>
 
-        {/* Pre-Register Button - responsive */}
+        {/* Register Now Button - responsive */}
         <Button   onClick={scrollToPreRegister}
  className="hidden sm:flex w-[120px] md:w-[143px] h-8 md:h-10 rounded-lg [font-family:'Oxanium',Helvetica] font-medium text-black text-sm md:text-base bg-[linear-gradient(180deg,rgba(237,200,79,1)_0%,rgba(199,156,39,1)_100%)] hover:bg-[linear-gradient(180deg,rgba(237,200,79,0.9)_0%,rgba(199,156,39,0.9)_100%)] transition-all duration-300 hover:scale-105 hover:shadow-lg">
-          Pre-Register
+          Register Now
         </Button>
       </div>
 
@@ -125,7 +125,7 @@ type HeaderSectionProps = {
             ))}
             <Button   onClick={scrollToPreRegister}
  className="w-full h-10 mt-4 rounded-lg [font-family:'Oxanium',Helvetica] font-medium text-black text-base bg-[linear-gradient(180deg,rgba(237,200,79,1)_0%,rgba(199,156,39,1)_100%)] hover:scale-105 transition-all duration-300">
-              Pre-Register
+              Register Now
             </Button>
           </div>
         </div>

@@ -120,7 +120,7 @@ export const PreRegistrationModal: React.FC<PreRegistrationModalProps> = ({ isOp
   }
 
   return (
-    <Modal isOpen={isOpen} onClose={onClose} title="Pre-Register for MYRK">
+    <Modal isOpen={isOpen} onClose={onClose} title="Registration for MYRK">
       <form onSubmit={handleSubmit} className="space-y-6">
         <div>
           <label htmlFor="fullName" className="block text-sm font-medium text-gray-300 mb-2">

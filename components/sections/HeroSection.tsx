@@ -176,7 +176,7 @@ export const HeroSection = ({ scrollToPreRegister }: HeroSectionProps): JSX.Elem
               alt="Frame"
               src="/figmaAssets/frame-1.svg"
             />
-            Pre-Register Now
+            Register Now
           </Button>
         </div>
       </section>
@@ -251,7 +251,7 @@ export const HeroSection = ({ scrollToPreRegister }: HeroSectionProps): JSX.Elem
                 alt="Frame"
                 src="/figmaAssets/frame-1.svg"
               />
-              Pre-Register Now
+              Register Now
             </Button>
           </div>
         </div>

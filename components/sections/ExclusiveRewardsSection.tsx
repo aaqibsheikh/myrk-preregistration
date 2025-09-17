@@ -72,7 +72,7 @@ export const ExclusiveRewardsSection = (): JSX.Element => {
         {/* Section Header */}
         <div className="flex flex-col items-center mb-12 sm:mb-14 md:mb-16">
           <h2 className="[font-family:'Orbitron',Helvetica] font-normal text-white text-2xl sm:text-3xl md:text-4xl lg:text-5xl text-center leading-tight transition-all duration-300">
-            Exclusive Pre-Register Rewards
+            Exclusive Registration Rewards
           </h2>
           <p className="[font-family:'Oxanium',Helvetica] font-normal text-gray-400 text-base sm:text-lg md:text-xl text-center leading-7 mt-4 sm:mt-6 px-4 transition-all duration-300">
             Join early and claim these legendary rewards!

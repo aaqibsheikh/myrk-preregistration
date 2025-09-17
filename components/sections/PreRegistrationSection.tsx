@@ -192,7 +192,7 @@ export const PreRegistrationSection = forwardRef<HTMLDivElement>((props, ref) =>
               Secure Your Spot
             </h2>
             <p className="mt-4 sm:mt-6 font-normal text-gray-400 text-sm sm:text-base text-center tracking-[0] leading-6 [font-family:'Oxanium',Helvetica] transition-all duration-300">
-              Pre-register now and be among the first to enter the world of MYRK
+              Register now and be among the first to enter the world of MYRK
             </p>
           </div>
 

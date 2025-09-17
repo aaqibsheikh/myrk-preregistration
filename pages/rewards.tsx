@@ -179,14 +179,14 @@ export default function Rewards() {
               Exclusive Rewards
             </h1>
             <p className="text-xl md:text-2xl [font-family:'Oxanium',Helvetica] font-medium text-gray-300 max-w-3xl mx-auto leading-relaxed mb-8">
-              Unlock incredible rewards by pre-registering for MYRK today
+              Unlock incredible rewards by registering for MYRK today
             </p>
             {/* <div className="bg-[#ffffff08] backdrop-blur-md border-[#edc84f40] rounded-2xl p-6 max-w-2xl mx-auto">
               <p className="text-3xl [font-family:'Orbitron',Helvetica] font-normal text-[#edc84f] mb-2">
                 Total Value: $149.94
               </p>
               <p className="text-lg [font-family:'Oxanium',Helvetica] text-gray-300">
-                Completely FREE for pre-registered players
+                Completely FREE for registered players
               </p>
             </div> */}
           </div>
@@ -488,7 +488,7 @@ export default function Rewards() {
               Claim Your Rewards Today
             </h2>
             <p className="text-xl [font-family:'Oxanium',Helvetica] font-medium text-gray-300 mb-8">
-              Pre-register now to secure all exclusive rewards worth $149.94 -
+              Register now to secure all exclusive rewards worth $149.94 -
               completely free
             </p>
             <Button className="w-[300px] h-[60px] rounded-xl shadow-[0px_0px_30px_#8b451380] border-0 border-none bg-[linear-gradient(180deg,rgba(237,200,79,1)_0%,rgba(199,156,39,1)_100%)] [font-family:'Oxanium',Helvetica] font-semibold text-black text-xl hover:scale-105 hover:shadow-[0px_0px_40px_#edc84f80] transition-all duration-300 hover:brightness-110">
@@ -497,7 +497,7 @@ export default function Rewards() {
                 alt="Frame"
                 src="/figmaAssets/frame-1.svg"
               />
-              Pre-Register Now
+              Register Now
             </Button>
           </div>
         </section>

@@ -91,7 +91,7 @@ export default function Community() {
   ];
 
   const stats = [
-    { number: "75K+", label: "Pre-Registered Players" },
+    { number: "75K+", label: "Registered Players" },
     { number: "12", label: "Active Communities" },
     { number: "500+", label: "Daily Discussions" },
     { number: "50+", label: "Community Events" }

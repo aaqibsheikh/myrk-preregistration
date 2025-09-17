@@ -145,7 +145,7 @@ export default function Features() {
               alt="Frame"
               src="/figmaAssets/frame-1.svg"
             />
-            Pre-Register Now
+            Register Now
           </Button>
         </div>
       </section>

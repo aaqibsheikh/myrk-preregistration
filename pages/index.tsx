@@ -25,25 +25,25 @@ export default function Home() {
   return (
     <>
       <Head>
-        <title>MYRK - Epic Gaming Experience | Pre-Register Now</title>
+        <title>MYRK - Epic Gaming Experience | Register Now</title>
         <meta
           name="description"
-          content="Embark on an epic gaming journey with MYRK. Pre-register now to secure exclusive rewards and early access to the most anticipated game of the year."
+          content="Embark on an epic gaming journey with MYRK. Register now to secure exclusive rewards and early access to the most anticipated game of the year."
         />
         <meta
           name="keywords"
-          content="MYRK, gaming, pre-register, epic game, exclusive rewards, early access"
+          content="MYRK, gaming, registration, epic game, exclusive rewards, early access"
         />
         <meta name="viewport" content="width=device-width, initial-scale=1" />
 
         {/* Open Graph tags */}
         <meta
           property="og:title"
-          content="MYRK - Epic Gaming Experience | Pre-Register Now"
+          content="MYRK - Epic Gaming Experience | Register Now"
         />
         <meta
           property="og:description"
-          content="Embark on an epic gaming journey with MYRK. Pre-register now to secure exclusive rewards and early access to the most anticipated game of the year."
+          content="Embark on an epic gaming journey with MYRK. Register now to secure exclusive rewards and early access to the most anticipated game of the year."
         />
         <meta property="og:type" content="website" />
         <meta property="og:url" content="https://myrk-game.com" />
@@ -56,11 +56,11 @@ export default function Home() {
         <meta name="twitter:card" content="summary_large_image" />
         <meta
           name="twitter:title"
-          content="MYRK - Epic Gaming Experience | Pre-Register Now"
+          content="MYRK - Epic Gaming Experience | Register Now"
         />
         <meta
           name="twitter:description"
-          content="Embark on an epic gaming journey with MYRK. Pre-register now to secure exclusive rewards and early access to the most anticipated game of the year."
+          content="Embark on an epic gaming journey with MYRK. Register now to secure exclusive rewards and early access to the most anticipated game of the year."
         />
         <meta
           name="twitter:image"
