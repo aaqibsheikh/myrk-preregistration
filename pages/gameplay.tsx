@@ -187,15 +187,17 @@ export default function Gameplay() {
             Experience the magic and adventure of MYRK through our gameplay trailer
           </p>
           
-          <div className="relative w-full aspect-video rounded-2xl overflow-hidden bg-gradient-to-br from-[#1a1a2e] to-[#16213e] flex items-center justify-center">
-            <div className="text-center">
-              <div className="w-20 h-20 rounded-full bg-[linear-gradient(180deg,rgba(237,200,79,1)_0%,rgba(199,156,39,1)_100%)] flex items-center justify-center mb-4 mx-auto hover:scale-110 transition-all duration-300 cursor-pointer">
-                <svg className="w-8 h-8 text-black ml-1" fill="currentColor" viewBox="0 0 24 24">
-                  <path d="M8 5v14l11-7z"/>
-                </svg>
-              </div>
-              <p className="text-gray-400 [font-family:'Oxanium',Helvetica]">Gameplay Trailer Coming Soon</p>
-            </div>
+          <div className="relative w-full aspect-video rounded-2xl overflow-hidden shadow-2xl">
+            <iframe
+              width="100%"
+              height="100%"
+              src="https://www.youtube.com/embed/JNTY5vW4F00"
+              title="MYRK Gameplay Trailer"
+              frameBorder="0"
+              allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+              allowFullScreen
+              className="rounded-2xl"
+            ></iframe>
           </div>
         </div>
       </section>

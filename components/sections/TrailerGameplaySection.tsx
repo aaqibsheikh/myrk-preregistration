@@ -1,6 +1,4 @@
-import { PlayIcon } from "lucide-react";
 import React from "react";
-import { Card, CardContent } from "@/components/ui/card";
 
 export const TrailerGameplaySection = (): JSX.Element => {
   return (
@@ -17,13 +15,18 @@ export const TrailerGameplaySection = (): JSX.Element => {
           </p>
 
           <div className="relative flex justify-center w-full max-w-[896px] px-4 sm:px-0">
-            <Card className="w-full h-[250px] sm:h-[350px] md:h-[504px] rounded-2xl border-none bg-[linear-gradient(180deg,rgba(237,200,79,0.3)_0%,rgba(199,156,39,0.3)_100%)] hover:bg-[linear-gradient(180deg,rgba(237,200,79,0.4)_0%,rgba(199,156,39,0.4)_100%)] transition-all duration-300 cursor-pointer group">
-              <CardContent className="flex items-center justify-center h-full p-0">
-                <div className="relative w-16 sm:w-20 h-16 sm:h-20 rounded-full bg-white/20 flex items-center justify-center group-hover:bg-white/30 group-hover:scale-110 transition-all duration-300">
-                  <PlayIcon className="w-5 sm:w-6 h-5 sm:h-6 ml-1 text-white" />
-                </div>
-              </CardContent>
-            </Card>
+            <div className="relative w-full h-[250px] sm:h-[350px] md:h-[504px] rounded-2xl overflow-hidden shadow-2xl">
+              <iframe
+                width="100%"
+                height="100%"
+                src="https://www.youtube.com/embed/JNTY5vW4F00"
+                title="MYRK Gameplay Trailer"
+                frameBorder="0"
+                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+                allowFullScreen
+                className="rounded-2xl"
+              ></iframe>
+            </div>
 
             {/* Desktop character image */}
             <img
