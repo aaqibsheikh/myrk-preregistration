@@ -55,7 +55,7 @@ type HeaderSectionProps = {
         </Link>
 
         {/* Navigation - hidden on mobile, show hamburger menu */}
-        <NavigationMenu className="hidden lg:flex mx-auto">
+        <NavigationMenu className="hidden md:flex mx-auto">
           <NavigationMenuList className="flex gap-4 xl:gap-8">
             {menuItems.map((item, index) => (
               <NavigationMenuItem key={index}>
@@ -75,7 +75,7 @@ type HeaderSectionProps = {
 
         {/* Mobile menu button - show on smaller screens */}
         <Button 
-          className="lg:hidden w-8 h-8 p-0 bg-transparent hover:bg-[#ffffff1a] border border-[#ffffff1a] transition-all duration-300"
+          className="md:hidden w-8 h-8 p-0 bg-transparent hover:bg-[#ffffff1a] border border-[#ffffff1a] transition-all duration-300"
           variant="ghost"
           onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
         >
@@ -119,7 +119,7 @@ type HeaderSectionProps = {
 
       {/* Mobile menu dropdown */}
       {isMobileMenuOpen && (
-        <div className="lg:hidden absolute top-full left-0 w-full bg-[#000000f0] backdrop-blur-md border-t border-[#ffffff1a] z-50">
+        <div className="md:hidden absolute top-full left-0 w-full bg-[#000000f0] backdrop-blur-md border-t border-[#ffffff1a] z-50">
           <div className="flex flex-col py-4 px-6 space-y-4">
             {menuItems.map((item, index) => (
               <Link key={index} href={item.path}>
