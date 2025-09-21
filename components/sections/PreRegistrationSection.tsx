@@ -185,7 +185,7 @@ export const PreRegistrationSection = forwardRef<HTMLDivElement>((props, ref) =>
 
   return (
     <>
-      <div ref={ref} className="relative w-full min-h-[500px] sm:min-h-[600px] md:h-[608px] bg-[#00000080] py-12 sm:py-16 md:py-20 transition-all duration-300">
+      <div ref={ref} id="register" className="relative w-full min-h-[500px] sm:min-h-[600px] md:h-[608px] bg-[#00000080] py-12 sm:py-16 md:py-20 transition-all duration-300">
         <div className="relative w-full max-w-[672px] h-auto mx-auto px-4 sm:px-6">
           <div className="flex flex-col items-center mb-8 sm:mb-12">
             <h2 className="font-normal text-2xl sm:text-3xl md:text-4xl text-white text-center tracking-[0] leading-tight [font-family:'Orbitron',Helvetica] transition-all duration-300">

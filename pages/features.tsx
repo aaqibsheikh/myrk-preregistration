@@ -139,7 +139,10 @@ export default function Features() {
           <p className="text-xl [font-family:'Oxanium',Helvetica] font-medium text-gray-300 mb-8">
             Join thousands of adventurers and be among the first to experience MYRK
           </p>
-          <Button className="w-[300px] h-[60px] rounded-xl shadow-[0px_0px_30px_#8b451380] border-0 border-none bg-[linear-gradient(180deg,rgba(237,200,79,1)_0%,rgba(199,156,39,1)_100%)] [font-family:'Oxanium',Helvetica] font-semibold text-black text-xl hover:scale-105 hover:shadow-[0px_0px_40px_#edc84f80] transition-all duration-300 hover:brightness-110">
+          <Button 
+            onClick={() => window.location.href = '/#register'}
+            className="w-full max-w-[300px] h-[50px] sm:h-[60px] rounded-xl shadow-[0px_0px_30px_#8b451380] border-0 border-none bg-[linear-gradient(180deg,rgba(237,200,79,1)_0%,rgba(199,156,39,1)_100%)] [font-family:'Oxanium',Helvetica] font-semibold text-black text-lg sm:text-xl hover:scale-105 hover:shadow-[0px_0px_40px_#edc84f80] transition-all duration-300 hover:brightness-110"
+          >
             <img
               className="w-[25px] h-5 mr-2 transition-transform duration-300 group-hover:scale-110"
               alt="Frame"
