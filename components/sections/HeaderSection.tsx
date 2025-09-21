@@ -119,7 +119,7 @@ type HeaderSectionProps = {
 
       {/* Mobile menu dropdown */}
       {isMobileMenuOpen && (
-        <div className="lg:hidden absolute top-full left-0 w-full bg-[#000000f0] backdrop-blur-md border-t border-[#ffffff1a] z-40">
+        <div className="lg:hidden absolute top-full left-0 w-full bg-[#000000f0] backdrop-blur-md border-t border-[#ffffff1a] z-50">
           <div className="flex flex-col py-4 px-6 space-y-4">
             {menuItems.map((item, index) => (
               <Link key={index} href={item.path}>

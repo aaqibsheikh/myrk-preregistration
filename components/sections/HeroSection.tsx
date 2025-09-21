@@ -181,8 +181,8 @@ export const HeroSection = ({ scrollToPreRegister }: HeroSectionProps): JSX.Elem
         </div>
       </section>
 
-      {/* Mobile Version - Exact Figma Mobile Wireframe */}
-      <section className="block md:hidden relative w-full h-screen overflow-hidden">
+      {/* Mobile Version - Optimized for Better Mobile Experience */}
+      <section className="block md:hidden relative w-full min-h-screen overflow-hidden">
         {/* Mobile Background */}
         <img
           className="absolute inset-0 w-full h-full object-cover"
@@ -190,64 +190,67 @@ export const HeroSection = ({ scrollToPreRegister }: HeroSectionProps): JSX.Elem
           src="/figmaAssets/bg-1.png"
         />
 
-        {/* Mobile gradient overlay - exact Figma opacity */}
-        <div className="absolute inset-0 bg-[linear-gradient(180deg,rgba(0,0,0,0.2)_0%,rgba(0,0,0,0.8)_100%)] z-10" />
+        {/* Mobile gradient overlay - improved for better text readability */}
+        <div className="absolute inset-0 bg-[linear-gradient(180deg,rgba(0,0,0,0.3)_0%,rgba(0,0,0,0.7)_50%,rgba(0,0,0,0.9)_100%)] z-10" />
 
-        {/* Mobile Characters - Enhanced with blur and lighting effects for Figma accuracy */}
+        {/* Mobile Characters - Repositioned to avoid UI conflicts */}
         {/* Left Character - Warrior with weapon */}
         <img
-          className="absolute bottom-0 left-0 w-40 h-52 object-contain z-25 transition-all duration-700 hover:brightness-110"
+          className="absolute bottom-0 left-0 w-32 h-40 object-contain z-20 opacity-60 transition-all duration-700"
           alt="Left Warrior Character"
           src="/figmaAssets/gau-1-1.png"
-          style={{ filter: 'drop-shadow(0 0 10px rgba(237,200,79,0.3))' }}
+          style={{ filter: 'drop-shadow(0 0 8px rgba(237,200,79,0.2))' }}
         />
         
         {/* Right Character - Crystal/Magic character */}
         <img
-          className="absolute bottom-0 right-0 w-40 h-52 object-contain z-25 transition-all duration-700 hover:brightness-110"
+          className="absolute bottom-0 right-0 w-32 h-40 object-contain z-20 opacity-60 transition-all duration-700"
           alt="Right Crystal Character"
           src="/figmaAssets/gau2-1.png"
-          style={{ filter: 'drop-shadow(0 0 10px rgba(237,200,79,0.3))' }}
+          style={{ filter: 'drop-shadow(0 0 8px rgba(237,200,79,0.2))' }}
         />
 
-        {/* Mobile UI Container */}
-        <div className="absolute inset-0 z-50 flex flex-col">
-          {/* Top section with logo and title */}
-          <div className="flex-1 flex flex-col items-center justify-center pt-8 px-6">
+        {/* Mobile UI Container - Better spacing and layout */}
+        <div className="absolute inset-0 z-40 flex flex-col mt-10 px-4 py-8">
+          {/* Top section with logo and title - More compact */}
+          <div className="flex flex-col items-center justify-center pt-12 pb-8">
             {/* Mobile Logo */}
             <img
-              className="w-20 h-20 object-contain mb-2"
+              className="w-32 h-32 object-contain mb-3"
               alt="MYRK Logo"
               src="/figmaAssets/logo-1.png"
             />
 
-            {/* Mobile Title with subtitle - enhanced with perfect gradients */}
-            <div className="text-center mb-6">
-              <div className="text-white text-xs [font-family:'Oxanium',Helvetica] font-medium tracking-wide opacity-90 transition-all duration-300">
+            {/* Mobile Title with subtitle */}
+            <div className="text-center mb-4">
+              {/* <div className="text-white text-sm [font-family:'Oxanium',Helvetica] font-medium tracking-wide opacity-90 mb-2">
                 ECHOES OF THE FORGOTTEN
-              </div>
+              </div> */}
+              {/* <h1 className="text-2xl [font-family:'Orbitron',Helvetica] font-bold text-white mb-3">
+                MYRK
+              </h1> */}
             </div>
 
-            {/* Mobile tagline - enhanced typography */}
-            <h2 className="[font-family:'Oxanium',Helvetica] font-semibold text-white text-center text-lg leading-6 mb-4 px-4 transition-all duration-500 hover:text-gray-100">
+            {/* Mobile tagline - Shorter and more impactful */}
+            <h2 className="[font-family:'Oxanium',Helvetica] font-semibold text-white text-center text-lg leading-8 px-2 max-w-sm">
               Enter the realm where legends are forged and destinies are written
             </h2>
           </div>
 
-          {/* Bottom section with description and button */}
-          <div className="flex flex-col items-center pb-6 px-6 mt-auto">
-            {/* Mobile description */}
-            <p className="[font-family:'Oxanium',Helvetica] font-medium text-gray-300 text-sm text-center leading-5 mb-6 px-4 max-w-xs">
-              Embark on an epic adventure through mystical lands, battle ancient creatures, and uncover the secrets of MYRK
+          {/* Bottom section with description and button - Cleaner layout */}
+          <div className="flex flex-col items-center space-y-6 pb-8">
+            {/* Mobile description - More concise */}
+            <p className="[font-family:'Oxanium',Helvetica] font-medium text-gray-300 text-base text-center leading-6 px-6 max-w-sm">
+              Embark on an epic adventure through mystical lands and uncover the secrets of MYRK
             </p>
 
-            {/* Mobile CTA button - enhanced with perfect effects */}
+            {/* Mobile CTA button - Better positioning */}
             <Button 
-            onClick={scrollToPreRegister}
-              className="w-full max-w-[280px] h-[50px] btn-primary rounded-lg [font-family:'Oxanium',Helvetica] font-semibold text-black text-base mb-4"
+              onClick={scrollToPreRegister}
+              className="w-full max-w-[260px] h-[48px] rounded-xl bg-[linear-gradient(180deg,rgba(237,200,79,1)_0%,rgba(199,156,39,1)_100%)] [font-family:'Oxanium',Helvetica] font-semibold text-black text-base shadow-lg hover:scale-105 transition-all duration-300"
             >
               <img
-                className="w-5 h-4 mr-2 transition-transform duration-300 hover:scale-110"
+                className="w-4 h-4 mr-2"
                 alt="Frame"
                 src="/figmaAssets/frame-1.svg"
               />
