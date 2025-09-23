@@ -51,13 +51,8 @@ export default function Analytics() {
   // Check authentication on component mount
   useEffect(() => {
     const checkAuth = () => {
-      // Additional security: Check if the page is accessed directly
-      const referrer = document.referrer;
-      const isDirectAccess = !referrer || referrer.includes(window.location.hostname);
-      
-      // Only allow access if coming from the same domain or if already authenticated
       const authToken = localStorage.getItem('analytics_auth');
-      if (authToken === 'authenticated' && isDirectAccess) {
+      if (authToken === 'authenticated') {
         setIsAuthenticated(true);
       }
       setAuthLoading(false);
