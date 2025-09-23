@@ -1,0 +1,11 @@
+User-agent: *
+Allow: /
+
+# Block analytics page from being indexed
+Disallow: /analytics
+Disallow: /api/analytics
+
+# Block test pages
+Disallow: /test-email
+
+Sitemap: https://myrk-game.com/sitemap.xml

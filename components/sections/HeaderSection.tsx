@@ -37,6 +37,7 @@ type HeaderSectionProps = {
     { text: "Gameplay", width: "w-[74px]", path: "/gameplay" },
     { text: "Rewards", width: "w-16", path: "/rewards" },
     { text: "Community", width: "w-[85px]", path: "/community" },
+
   ];
 
   return (
