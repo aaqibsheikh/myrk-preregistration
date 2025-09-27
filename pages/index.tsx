@@ -79,7 +79,7 @@ export default function Home() {
         {/* <FrozenVaultSection /> */}
         <ExclusiveRewardsSection />
         <PreRegistrationSection ref={preRegRef} />
-        <CountdownTimerSection />
+        {/* <CountdownTimerSection /> */}
         {/* <SignalFromTheVoidSection /> */}
         {/* <CommunityEngagementSection /> */}
         <StorylineSection />
