@@ -16,7 +16,7 @@ export default function Terms() {
       </Head>
 
       <div className="min-h-screen bg-[#0a0a0a] text-white">
-        <HeaderSection />
+        <HeaderSection scrollToPreRegister={() => {}} />
         
         <div className="container mx-auto px-4 py-16 max-w-4xl">
           <div className="mb-8">

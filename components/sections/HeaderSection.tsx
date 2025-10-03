@@ -27,7 +27,7 @@ type HeaderSectionProps = {
     if (location === '/') {
       scrollToPreRegister();
     } else {
-      window.location.href = '/#register';
+      router.push('/#register');
     }
   };
 
