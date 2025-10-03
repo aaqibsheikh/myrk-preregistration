@@ -1,5 +1,6 @@
 import { ChevronDownIcon } from "lucide-react";
 import React, { forwardRef, useState, useEffect } from "react";
+import Link from "next/link";
 import { Button } from "@/components/ui/button";
 import { Card, CardContent } from "@/components/ui/card";
 import { Checkbox } from "@/components/ui/checkbox";
@@ -277,7 +278,11 @@ export const PreRegistrationSection = forwardRef<HTMLDivElement>((props, ref) =>
                     htmlFor="terms"
                     className="text-gray-300 text-sm [font-family:'Oxanium',Helvetica] cursor-pointer transition-all duration-300 hover:text-white leading-relaxed"
                   >
-                    I agree to receive updates and promotional content about MYRK
+                    By registering, you agree to our{" "}
+                    <Link href="/privacy" className="text-[#edc84f] hover:underline">
+                      Privacy Policy
+                    </Link>{" "}
+                    and consent to receive occasional updates. You may unsubscribe anytime.
                   </label>
                 </div>
                 {hasSubmitted && errors.agreeToUpdates && (

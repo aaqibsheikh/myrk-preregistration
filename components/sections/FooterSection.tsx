@@ -45,8 +45,8 @@ export const FooterSection = (): JSX.Element => {
   // Footer links data
   const footerLinks = [
     { text: "Contact Us", href: "#" },
-    { text: "Terms of Service", href: "#" },
-    { text: "Privacy Policy", href: "#" }
+    { text: "Terms of Service", href: "/terms" },
+    { text: "Privacy Policy", href: "/privacy" }
   ];
 
   return (
@@ -68,7 +68,7 @@ export const FooterSection = (): JSX.Element => {
             </div> */}
             <Link
               href="/"
-              className="flex items-center h-8 md:h-10 transition-all duration-300 hover:scale-105"
+              className="flex items-center h-8 md:h-10 mt-10 transition-all duration-300 hover:scale-105"
             >
               <img
                 className="w-8 h-8 md:w-10 md:h-10 object-contain mr-2 md:mr-3 transition-all duration-300"
@@ -83,13 +83,13 @@ export const FooterSection = (): JSX.Element => {
             {/* Links */}
             <div className="flex flex-col sm:flex-row justify-center gap-4 sm:gap-8 md:gap-12">
               {footerLinks.map((link, index) => (
-                <a
+                <Link
                   key={index}
                   href={link.href}
                   className="[font-family:'Oxanium',Helvetica] font-normal text-orange-400 text-sm text-center tracking-[0] leading-5 whitespace-nowrap hover:underline hover:text-[#edc84f] transition-all duration-300"
                 >
                   {link.text}
-                </a>
+                </Link>
               ))}
             </div>
 
@@ -97,6 +97,11 @@ export const FooterSection = (): JSX.Element => {
             <p className="max-w-[277px] [font-family:'Oxanium',Helvetica] font-normal text-gray-400 text-xs sm:text-sm text-center tracking-[0] leading-5 transition-all duration-300">
               Enter a world where shadows hold secrets and your prophecy
               unfolds.
+            </p>
+
+            {/* Age Restriction Notice */}
+            <p className="[font-family:'Oxanium',Helvetica] font-normal text-gray-500 text-xs text-center tracking-[0] leading-4 transition-all duration-300">
+              Not intended for children under 13. Parental permission required under 18.
             </p>
 
             {/* Social Media Icons - Active Links */}
