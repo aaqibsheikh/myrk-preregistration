@@ -8,6 +8,23 @@ interface PreRegistrationData {
   platform?: string;
   agreeToUpdates: boolean;
   registeredAt: string;
+  // Campaign tracking fields
+  utm_source?: string;
+  utm_medium?: string;
+  utm_campaign?: string;
+  utm_content?: string;
+  utm_term?: string;
+  landing_page?: string;
+  referrer?: string;
+}
+
+interface CampaignStats {
+  campaign: string;
+  source: string;
+  medium: string;
+  registrations: number;
+  firstSeen: string;
+  lastSeen: string;
 }
 
 interface AnalyticsResponse {
@@ -18,6 +35,9 @@ interface AnalyticsResponse {
     emailDomains: { [key: string]: number };
     dailyRegistrations: { [key: string]: number };
     registrations: PreRegistrationData[];
+    campaignStats: CampaignStats[];
+    campaignSources: { [key: string]: number };
+    organicVsPaid: { organic: number; campaign: number };
   };
   error?: string;
 }
@@ -43,6 +63,10 @@ export default async function handler(
     const registrations: PreRegistrationData[] = [];
     const emailDomains: { [key: string]: number } = {};
     const dailyRegistrations: { [key: string]: number } = {};
+    const campaignMap: { [key: string]: CampaignStats } = {};
+    const campaignSources: { [key: string]: number } = {};
+    let organicCount = 0;
+    let campaignCount = 0;
     
     let totalCount = 0;
     let recentCount = 0;
@@ -67,7 +91,41 @@ export default async function handler(
       // Daily registration tracking
       const dateKey = registrationDate.toISOString().split('T')[0];
       dailyRegistrations[dateKey] = (dailyRegistrations[dateKey] || 0) + 1;
+      
+      // Campaign tracking analysis
+      if (data.utm_campaign || data.utm_source) {
+        campaignCount++;
+        
+        const campaign = data.utm_campaign || 'Unknown Campaign';
+        const source = data.utm_source || 'Unknown Source';
+        const medium = data.utm_medium || 'Unknown Medium';
+        const campaignKey = `${source}_${medium}_${campaign}`;
+        
+        if (campaignMap[campaignKey]) {
+          campaignMap[campaignKey].registrations++;
+          campaignMap[campaignKey].lastSeen = data.registeredAt;
+        } else {
+          campaignMap[campaignKey] = {
+            campaign,
+            source,
+            medium,
+            registrations: 1,
+            firstSeen: data.registeredAt,
+            lastSeen: data.registeredAt,
+          };
+        }
+        
+        // Track by source
+        campaignSources[source] = (campaignSources[source] || 0) + 1;
+      } else {
+        organicCount++;
+      }
     });
+    
+    // Convert campaign map to array and sort by registrations
+    const campaignStats = Object.values(campaignMap).sort(
+      (a, b) => b.registrations - a.registrations
+    );
     
     // Sort by registration date (newest first)
     registrations.sort((a, b) => new Date(b.registeredAt).getTime() - new Date(a.registeredAt).getTime());
@@ -79,7 +137,13 @@ export default async function handler(
         recentRegistrations: recentCount,
         emailDomains,
         dailyRegistrations,
-        registrations
+        registrations,
+        campaignStats,
+        campaignSources,
+        organicVsPaid: {
+          organic: organicCount,
+          campaign: campaignCount,
+        },
       }
     });
     

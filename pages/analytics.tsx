@@ -27,6 +27,15 @@ import { db } from '@/lib/firebase';
 import { collection, getDocs, query, orderBy, limit, where } from 'firebase/firestore';
 import { PreRegistrationData } from '@/lib/firebase';
 
+interface CampaignStats {
+  campaign: string;
+  source: string;
+  medium: string;
+  registrations: number;
+  firstSeen: string;
+  lastSeen: string;
+}
+
 interface AnalyticsData {
   totalRegistrations: number;
   recentRegistrations: number;
@@ -35,6 +44,9 @@ interface AnalyticsData {
   weeklyTrend: number;
   latestRegistrations: PreRegistrationData[];
   registrationRate: number;
+  campaignStats: CampaignStats[];
+  campaignSources: { [key: string]: number };
+  organicVsPaid: { organic: number; campaign: number };
 }
 
 export default function Analytics() {
@@ -110,6 +122,10 @@ export default function Analytics() {
       const registrations: PreRegistrationData[] = [];
       const emailDomains: { [key: string]: number } = {};
       const dailyRegistrations: { [key: string]: number } = {};
+      const campaignMap: { [key: string]: CampaignStats } = {};
+      const campaignSources: { [key: string]: number } = {};
+      let organicCount = 0;
+      let campaignCount = 0;
       
       let totalCount = 0;
       let recentCount = 0;
@@ -134,7 +150,41 @@ export default function Analytics() {
         // Daily registration tracking
         const dateKey = registrationDate.toISOString().split('T')[0];
         dailyRegistrations[dateKey] = (dailyRegistrations[dateKey] || 0) + 1;
+        
+        // Campaign tracking analysis
+        if (data.utm_campaign || data.utm_source) {
+          campaignCount++;
+          
+          const campaign = data.utm_campaign || 'Unknown Campaign';
+          const source = data.utm_source || 'Unknown Source';
+          const medium = data.utm_medium || 'Unknown Medium';
+          const campaignKey = `${source}_${medium}_${campaign}`;
+          
+          if (campaignMap[campaignKey]) {
+            campaignMap[campaignKey].registrations++;
+            campaignMap[campaignKey].lastSeen = data.registeredAt;
+          } else {
+            campaignMap[campaignKey] = {
+              campaign,
+              source,
+              medium,
+              registrations: 1,
+              firstSeen: data.registeredAt,
+              lastSeen: data.registeredAt,
+            };
+          }
+          
+          // Track by source
+          campaignSources[source] = (campaignSources[source] || 0) + 1;
+        } else {
+          organicCount++;
+        }
       });
+      
+      // Convert campaign map to array and sort by registrations
+      const campaignStats = Object.values(campaignMap).sort(
+        (a, b) => b.registrations - a.registrations
+      );
       
       // Sort by registration date (newest first)
       registrations.sort((a, b) => new Date(b.registeredAt).getTime() - new Date(a.registeredAt).getTime());
@@ -163,7 +213,13 @@ export default function Analytics() {
         dailyRegistrations,
         weeklyTrend,
         latestRegistrations: registrations.slice(0, 20), // Latest 20 registrations
-        registrationRate
+        registrationRate,
+        campaignStats,
+        campaignSources,
+        organicVsPaid: {
+          organic: organicCount,
+          campaign: campaignCount,
+        },
       });
       
     } catch (error) {
@@ -400,11 +456,46 @@ export default function Analytics() {
             </Card>
           </div>
 
+          {/* Campaign Stats Card */}
+          {analyticsData && analyticsData.campaignStats.length > 0 && (
+            <Card className="bg-[#1a1a1a] border-[#333] mb-8">
+              <CardContent className="p-6">
+                <div className="flex items-center justify-between">
+                  <div>
+                    <p className="text-sm font-medium text-gray-400">Campaign Traffic</p>
+                    <div className="flex items-center gap-4 mt-2">
+                      <div>
+                        <p className="text-2xl font-bold text-[#edc84f]">{analyticsData.organicVsPaid.campaign}</p>
+                        <p className="text-xs text-gray-400">From Campaigns</p>
+                      </div>
+                      <div className="h-10 w-px bg-[#333]" />
+                      <div>
+                        <p className="text-2xl font-bold text-gray-400">{analyticsData.organicVsPaid.organic}</p>
+                        <p className="text-xs text-gray-400">Organic</p>
+                      </div>
+                      <div className="h-10 w-px bg-[#333]" />
+                      <div>
+                        <p className="text-2xl font-bold text-white">
+                          {((analyticsData.organicVsPaid.campaign / analyticsData.totalRegistrations) * 100).toFixed(1)}%
+                        </p>
+                        <p className="text-xs text-gray-400">Campaign Rate</p>
+                      </div>
+                    </div>
+                  </div>
+                  <TrendingUp className="h-10 w-10 text-[#edc84f]" />
+                </div>
+              </CardContent>
+            </Card>
+          )}
+
           {/* Detailed Analytics */}
           <Tabs defaultValue="overview" className="w-full">
-            <TabsList className="grid w-full grid-cols-3 bg-[#1a1a1a] border-[#333]">
+            <TabsList className="grid w-full grid-cols-4 bg-[#1a1a1a] border-[#333]">
               <TabsTrigger value="overview" className="data-[state=active]:bg-[#edc84f] data-[state=active]:text-black">
                 Overview
+              </TabsTrigger>
+              <TabsTrigger value="campaigns" className="data-[state=active]:bg-[#edc84f] data-[state=active]:text-black">
+                Campaigns
               </TabsTrigger>
               <TabsTrigger value="registrations" className="data-[state=active]:bg-[#edc84f] data-[state=active]:text-black">
                 Registrations
@@ -483,6 +574,131 @@ export default function Analytics() {
                     </div>
                   </CardContent>
                 </Card>
+              </div>
+            </TabsContent>
+
+            <TabsContent value="campaigns" className="mt-6">
+              <div className="grid grid-cols-1 gap-6">
+                {/* Campaign Performance */}
+                <Card className="bg-[#1a1a1a] border-[#333]">
+                  <CardHeader>
+                    <CardTitle className="text-white flex items-center">
+                      <TrendingUp className="h-5 w-5 mr-2 text-[#edc84f]" />
+                      Campaign Performance
+                    </CardTitle>
+                  </CardHeader>
+                  <CardContent>
+                    {analyticsData && analyticsData.campaignStats.length > 0 ? (
+                      <div className="space-y-4">
+                        {analyticsData.campaignStats.map((campaign, index) => (
+                          <div key={index} className="p-4 bg-[#2a2a2a] rounded-lg border border-[#333]">
+                            <div className="flex items-start justify-between mb-3">
+                              <div className="flex-1">
+                                <h4 className="text-white font-semibold text-lg mb-1">
+                                  {campaign.campaign}
+                                </h4>
+                                <div className="flex items-center gap-3 text-sm text-gray-400">
+                                  <Badge className="bg-[#edc84f]/20 text-[#edc84f] border-[#edc84f]/30">
+                                    {campaign.source}
+                                  </Badge>
+                                  <Badge className="bg-blue-500/20 text-blue-400 border-blue-500/30">
+                                    {campaign.medium}
+                                  </Badge>
+                                </div>
+                              </div>
+                              <div className="text-right">
+                                <p className="text-3xl font-bold text-[#edc84f]">
+                                  {campaign.registrations}
+                                </p>
+                                <p className="text-xs text-gray-400">Registrations</p>
+                              </div>
+                            </div>
+                            
+                            <Separator className="bg-[#444] my-3" />
+                            
+                            <div className="grid grid-cols-2 gap-4 text-sm">
+                              <div>
+                                <p className="text-gray-400 mb-1">First Registration</p>
+                                <p className="text-white">
+                                  {new Date(campaign.firstSeen).toLocaleDateString()} {new Date(campaign.firstSeen).toLocaleTimeString()}
+                                </p>
+                              </div>
+                              <div>
+                                <p className="text-gray-400 mb-1">Latest Registration</p>
+                                <p className="text-white">
+                                  {new Date(campaign.lastSeen).toLocaleDateString()} {new Date(campaign.lastSeen).toLocaleTimeString()}
+                                </p>
+                              </div>
+                            </div>
+                            
+                            {/* Conversion Rate Visualization */}
+                            <div className="mt-4">
+                              <div className="flex items-center justify-between text-sm mb-2">
+                                <span className="text-gray-400">Share of Campaign Traffic</span>
+                                <span className="text-white font-medium">
+                                  {((campaign.registrations / analyticsData.organicVsPaid.campaign) * 100).toFixed(1)}%
+                                </span>
+                              </div>
+                              <div className="w-full bg-gray-700 rounded-full h-2">
+                                <div 
+                                  className="bg-[#edc84f] h-2 rounded-full transition-all duration-300"
+                                  style={{ 
+                                    width: `${(campaign.registrations / analyticsData.organicVsPaid.campaign) * 100}%` 
+                                  }}
+                                />
+                              </div>
+                            </div>
+                          </div>
+                        ))}
+                      </div>
+                    ) : (
+                      <div className="text-center py-12">
+                        <TrendingUp className="h-12 w-12 text-gray-600 mx-auto mb-4" />
+                        <p className="text-gray-400 text-lg mb-2">No Campaign Data Yet</p>
+                        <p className="text-gray-500 text-sm">
+                          Campaign tracking will appear here once users register via UTM-tagged links
+                        </p>
+                      </div>
+                    )}
+                  </CardContent>
+                </Card>
+
+                {/* Campaign Sources Breakdown */}
+                {analyticsData && analyticsData.campaignSources && Object.keys(analyticsData.campaignSources).length > 0 && (
+                  <Card className="bg-[#1a1a1a] border-[#333]">
+                    <CardHeader>
+                      <CardTitle className="text-white flex items-center">
+                        <PieChart className="h-5 w-5 mr-2 text-[#edc84f]" />
+                        Traffic Sources
+                      </CardTitle>
+                    </CardHeader>
+                    <CardContent>
+                      <div className="space-y-3">
+                        {Object.entries(analyticsData.campaignSources)
+                          .sort(([,a], [,b]) => b - a)
+                          .map(([source, count]) => (
+                            <div key={source} className="flex items-center justify-between p-3 bg-[#2a2a2a] rounded-lg border border-[#333]">
+                              <div className="flex items-center space-x-3">
+                                <div className="w-3 h-3 bg-[#edc84f] rounded-full"></div>
+                                <span className="text-white font-medium capitalize">{source}</span>
+                              </div>
+                              <div className="flex items-center space-x-4">
+                                <div className="w-32 bg-gray-700 rounded-full h-2">
+                                  <div 
+                                    className="bg-[#edc84f] h-2 rounded-full transition-all duration-300"
+                                    style={{ 
+                                      width: `${(count / Math.max(...Object.values(analyticsData.campaignSources))) * 100}%` 
+                                    }}
+                                  />
+                                </div>
+                                <span className="text-white font-medium w-12 text-right">{count}</span>
+                              </div>
+                            </div>
+                          ))}
+                      </div>
+                    </CardContent>
+                  </Card>
+                )}
               </div>
             </TabsContent>
 

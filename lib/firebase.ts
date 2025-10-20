@@ -22,6 +22,14 @@ export interface PreRegistrationData {
   platform?: string; // Made optional since dropdown is hidden
   agreeToUpdates: boolean;
   registeredAt: string;
+  // Campaign tracking fields
+  utm_source?: string; // e.g., "email", "social", "direct"
+  utm_medium?: string; // e.g., "blast", "post", "ad"
+  utm_campaign?: string; // e.g., "friday_launch_oct2024"
+  utm_content?: string; // Optional: for A/B testing
+  utm_term?: string; // Optional: for paid search keywords
+  landing_page?: string; // First page visited
+  referrer?: string; // Where they came from
 }
 
 // Email normalization function to handle Gmail plus addressing

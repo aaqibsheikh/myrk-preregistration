@@ -10,6 +10,7 @@ import { useToast } from "@/hooks/use-toast";
 import { SuccessModal } from "@/components/ui/success-modal";
 import { db, validatePreRegistrationData, checkDuplicateEmail, normalizeEmail, PreRegistrationData } from "../../lib/firebase";
 import { collection, addDoc } from "firebase/firestore";
+import { getCampaignData } from "@/lib/utils";
 
 interface FormData {
   fullName: string;
@@ -110,10 +111,14 @@ export const PreRegistrationSection = forwardRef<HTMLDivElement>((props, ref) =>
         return;
       }
 
+      // Get campaign tracking data
+      const campaignData = getCampaignData();
+
       // Validate data before submission
       const validationData: PreRegistrationData = {
         ...formData,
-        registeredAt: new Date().toISOString()
+        registeredAt: new Date().toISOString(),
+        ...campaignData, // Include campaign tracking data
       };
       
       const validation = validatePreRegistrationData(validationData);
@@ -128,10 +133,11 @@ export const PreRegistrationSection = forwardRef<HTMLDivElement>((props, ref) =>
         return;
       }
 
-      // Save to Firebase with normalized email
+      // Save to Firebase with normalized email and campaign data
       await addDoc(collection(db, "preregistrations"), {
         ...validationData,
-        email: normalizeEmail(formData.email) // Use normalized email
+        email: normalizeEmail(formData.email), // Use normalized email
+        ...campaignData, // Ensure campaign data is included
       });
       
       // Send confirmation email via external backend
