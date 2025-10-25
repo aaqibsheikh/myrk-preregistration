@@ -196,10 +196,11 @@ export const PreRegistrationSection = forwardRef<HTMLDivElement>((props, ref) =>
         <div className="relative w-full max-w-[672px] h-auto mx-auto px-4 sm:px-6">
           <div className="flex flex-col items-center mb-8 sm:mb-12">
             <h2 className="font-normal text-2xl sm:text-3xl md:text-4xl text-white text-center tracking-[0] leading-tight [font-family:'Orbitron',Helvetica] transition-all duration-300">
-              Secure Your Spot
+            Join Our Community
             </h2>
             <p className="mt-4 sm:mt-6 font-normal text-gray-400 text-sm sm:text-base text-center tracking-[0] leading-6 [font-family:'Oxanium',Helvetica] transition-all duration-300">
-              Register now and be among the first to enter the world of MYRK
+              Connect with fellow adventurers, get exclusive prizes and updates, and help shape the future of Penguin Pixelworks. 
+Our community is the heart of everything we do.
             </p>
           </div>
 
