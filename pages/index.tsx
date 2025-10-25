@@ -2,6 +2,7 @@ import React, { useRef } from "react";
 import Head from "next/head";
 import { HeaderSection } from "../components/sections/HeaderSection";
 import { HeroSection } from "../components/sections/HeroSection";
+import { PlatformLinksSection } from "../components/sections/PlatformLinksSection";
 import { GameFeaturesSection } from "../components/sections/GameFeaturesSection";
 import { TrailerGameplaySection } from "../components/sections/TrailerGameplaySection";
 import { ExclusiveRewardsSection } from "../components/sections/ExclusiveRewardsSection";
@@ -74,6 +75,7 @@ export default function Home() {
         <HeaderSection scrollToPreRegister={scrollToPreRegister} />
 
         <HeroSection scrollToPreRegister={scrollToPreRegister} />
+        <PlatformLinksSection />
         <GameFeaturesSection />
         <TrailerGameplaySection />
         {/* <FrozenVaultSection /> */}
