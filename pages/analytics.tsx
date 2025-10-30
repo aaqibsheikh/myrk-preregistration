@@ -43,6 +43,7 @@ interface AnalyticsData {
   dailyRegistrations: { [key: string]: number };
   weeklyTrend: number;
   latestRegistrations: PreRegistrationData[];
+  registrations: PreRegistrationData[];
   registrationRate: number;
   campaignStats: CampaignStats[];
   campaignSources: { [key: string]: number };
@@ -213,6 +214,7 @@ export default function Analytics() {
         dailyRegistrations,
         weeklyTrend,
         latestRegistrations: registrations.slice(0, 20), // Latest 20 registrations
+        registrations, // Full dataset for global search
         registrationRate,
         campaignStats,
         campaignSources,
@@ -264,10 +266,14 @@ export default function Analytics() {
     window.URL.revokeObjectURL(url);
   };
 
-  const filteredRegistrations = analyticsData?.latestRegistrations.filter(reg =>
+  const sourceList: PreRegistrationData[] = searchTerm
+    ? (analyticsData?.registrations || [])
+    : (analyticsData?.latestRegistrations || []);
+
+  const filteredRegistrations = sourceList.filter(reg =>
     reg.fullName.toLowerCase().includes(searchTerm.toLowerCase()) ||
     reg.email.toLowerCase().includes(searchTerm.toLowerCase())
-  ) || [];
+  );
 
   // Authentication loading state
   if (authLoading) {
@@ -708,7 +714,7 @@ export default function Analytics() {
                   <div className="flex items-center justify-between">
                     <CardTitle className="text-white flex items-center">
                       <Users className="h-5 w-5 mr-2 text-[#edc84f]" />
-                      Recent Registrations
+                      Registrations
                     </CardTitle>
                     <div className="flex items-center space-x-3">
                       <div className="relative">
@@ -721,6 +727,11 @@ export default function Analytics() {
                           className="pl-10 pr-4 py-2 bg-[#2a2a2a] border border-[#444] rounded-lg text-white placeholder-gray-400 focus:outline-none focus:border-[#edc84f]"
                         />
                       </div>
+                      {searchTerm && (
+                        <span className="text-xs text-gray-400">
+                          Showing {filteredRegistrations.length} result{filteredRegistrations.length === 1 ? '' : 's'} across all
+                        </span>
+                      )}
                     </div>
                   </div>
                 </CardHeader>
