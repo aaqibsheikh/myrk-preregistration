@@ -19,7 +19,7 @@ export const TrailerGameplaySection = (): JSX.Element => {
               <iframe
                 width="100%"
                 height="100%"
-                src="https://www.youtube.com/embed/JNTY5vW4F00"
+                src="https://www.youtube.com/embed/TH1RNA4F9HM?rel=0&modestbranding=1&controls=0&iv_load_policy=3&playsinline=1"
                 title="MYRK Gameplay Trailer"
                 frameBorder="0"
                 allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
